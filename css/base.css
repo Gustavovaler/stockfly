@@ -1,0 +1,39 @@
+
+.container{
+	width: 80%;
+	margin: auto;
+	padding: 10px;
+	clear: both;
+}
+.navegador{
+	width: 80%;
+	margin: 0px auto;
+	align-content: center;
+
+}
+.lista{
+	width: 100%;
+	align-self: center;
+	margin: auto;
+
+}
+
+.link{
+	list-style: none;
+	float: left;
+	width: 18%;
+	background-color: #800055;
+	height: 20px;
+	padding: 5px;
+	text-align: center;
+	margin: 2px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+.link a{
+	text-decoration-line: none;
+	text-decoration: none;
+	color: #000;
+	color: #fff;
+	text-shadow: 2px 2px 1px rgba(0,0,0,0.60);
+}

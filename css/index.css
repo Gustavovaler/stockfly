@@ -1,0 +1,30 @@
+.menu{
+	margin-top: 20px;
+	width: 30%;
+	float: left;
+	min-height: 6em;
+	/*background-color: #ccccff;*/
+}
+.boton{
+	width: 160px;
+	background-color: #005580;
+	box-shadow: 8px 5px 8px rgba(0,0,0,0.40),inset 10px 5px 5px rgba(255,255,255,0.35);	
+	margin: auto;
+	min-height:150px;
+	border-radius: 15px;
+	margin-top: 1.5em;
+	color: #fff;
+	border: 1px solid teal;
+	cursor: pointer;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.menu :hover{
+	background-color: #009085;
+}
+.texto_boton{
+	margin-top: 50px;
+	font-size: 1.2em;
+	text-shadow:2px 2px 1px rgba(0,0,0,0.6);
+}

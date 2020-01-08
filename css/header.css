@@ -1,0 +1,44 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+}
+.main_bar{
+	width: 100%;
+	min-height: 55px;
+	background-color: #005580;
+	padding: 10px;
+	box-shadow: inset 20px -5px 8px rgba(255,255,255,0.35);
+}
+
+#brand{
+	color: #fff;
+	font-size: 2.2em;
+	margin-left: 100px;
+	text-shadow:2px 2px 1px rgba(0,0,0,0.6) ,3px 3px 2px rgba(255,255,255,0.40) ;
+	float: left;
+}
+.info_general{
+	width: 80%;
+	margin: 10px auto;
+	font-size: 1em;
+	background-color: #00b0b0;
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow:  inset -10px -5px 5px rgba(255,255,255,0.50);
+	border: 2px solid #fcfcfc;
+	color: #fff;
+	text-align: center;
+}
+.info_general p{
+	text-shadow: 2px 2px 1px rgba(0,0,0,0.6);
+}
+.info_pagina{
+	float: left;
+	color: #fff;
+	text-shadow:2px 2px 1px rgba(0,0,0,0.6) ,3px 3px 2px rgba(255,255,255,0.40) ;
+	margin-left: 50px;
+	margin-top: 16px;
+	
+}

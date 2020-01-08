@@ -1,0 +1,46 @@
+
+
+#selectCategoria{
+	width: 50%;
+	font-size: 1.4em;
+	color: #970184;
+	border-radius: 5px;
+	padding: 5px;
+	border-color: teal;
+	margin-bottom: 15px;
+	
+}
+
+.opcion{
+	
+}
+label{
+	padding: 5px;
+	margin: 5px 5px 10px 0px;
+	display: block;
+	color: teal;
+	font-weight: bold;
+}
+table{
+	border: 1px solid teal;
+	padding: 5px;
+	color: #970184;
+	border-radius: 5px;
+	width: 100%;
+	
+}
+.campos{
+	padding: 6px;
+	font-size: 1.2em;
+	font-weight: bold ;
+	font-style: italic;
+	color: #cc6699;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.datos{
+	padding: 4px;
+	color: #131313;
+	border: 1px solid black;
+	font-size: 1.1em;
+	background-color: #eeffff;
+}
