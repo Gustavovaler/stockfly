@@ -1,5 +1,6 @@
 <?php
 	include('header.php');
+	include('global/conexion.php');
 ?>
 <link rel="stylesheet" href="css/base.css">
 <body>
@@ -47,23 +48,34 @@
 <div class="resultados">
 	<table>
 		<tr>
+			<td class="campos">Id</td>
+			<td class="campos">Categoria</td>
+			<td class="campos">Modelo</td>
 			<td class="campos">Color</td>
 			<td class="campos">Estampa</td>
 			<td class="campos">Talle</td>
-			<td class="campos">Variante</td>
-			<td class="campos">Combinacion</td>
-			<td class="campos">Extra</td>
 			<td class="campos">Cantidad</td>
 		</tr>
+		<?php
+		$sql = "SELECT * FROM fs_productos";
+
+
+		$consulta = $con->query($sql);
+
+		foreach ($consulta as $key) {		
+		?>
 		<tr>
-			<td class="datos">negro</td>
-			<td class="datos"></td>
-			<td class="datos">4</td>
-			<td class="datos">Liso</td>
-			<td class="datos">rojo/negro</td>
-			<td class="datos"></td>
-			<td class="datos">12</td>
+			<td class="datos id_producto"><?php echo $key['id_producto'];?></td>
+			<td class="datos categoria"><?php echo $key['categoria'];?></td>
+			<td class="datos modelo"><?php echo $key['modelo'];?></td>
+			<td class="datos color"><?php echo $key['color'];?></td>
+			<td class="datos estampa"><?php echo $key['estampa'];?></td>
+			<td class="datos talle"><?php echo $key['talle'];?></td>
+			<td class="datos cantidad"><?php echo $key['cantidad'];?></td>
 		</tr>
+		<?php
+	}
+	?>
 	</table> 
 </div>
 

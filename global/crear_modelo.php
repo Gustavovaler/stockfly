@@ -40,6 +40,7 @@ $tabla_movimientos = "CREATE TABLE IF NOT EXISTS fs_movimientos (
 					producto int NOT NULL,
 					fecha DATETIME DEFAULT current_timestamp())
 					ENGINE = InnoDB DEFAULT CHARSET = utf8";
+					
 
 $claves_foraneas = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 					usuario) references fs_usuarios (id_usuario) on delete cascade on update cascade";
