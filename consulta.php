@@ -3,6 +3,7 @@
 	include('global/conexion.php');
 ?>
 <link rel="stylesheet" href="css/base.css">
+
 <body>
 	<!--Se incluye la barra de navegacion -->
 <?php

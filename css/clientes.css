@@ -1,0 +1,51 @@
+label{
+
+	padding: 5px;
+	margin: 5px 5px 10px 0px;
+	display: block;
+	color: teal;
+	font-weight: bold;
+
+}
+input{
+	width: 50%;
+	font-size: 1.4em;
+	color: #970184;
+	border-radius: 5px;
+	padding: 5px;
+	border: 1px solid teal;
+	margin-bottom: 15px;
+}
+button{
+	background-color: #800055;
+	height: 40px;
+	padding: 5px 20px 5px 20px;
+	text-align: center;
+	margin: 2px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	color: #fff;
+	cursor: pointer;
+}
+table{
+	margin-top: 5px;
+	border: 1px solid teal;
+	padding: 5px;
+	color: #970184;
+	border-radius: 5px;
+	width: 100%;
+	
+}
+.datos{
+	padding: 4px;
+	color: #131313;
+	border: 1px solid black;
+	font-size: 0.8em;
+	background-color: #eeffff;
+}
+#form_cliente{
+	display: none;
+}
+.boton{
+	padding: 10px;
+}
