@@ -23,7 +23,7 @@ include('header.php');
 				</p>
 			</div>
 		</div></a>
-		<a href=""><div class="menu3 menu">
+		<a href="alta_baja.php"><div class="menu3 menu">
 			<div class="boton">
 				<p class="texto_boton">
 					Alta/Baja de stock.
