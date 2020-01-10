@@ -11,7 +11,8 @@ include('global/conexion.php')
 
 		<!--////////SECCION CLIENTE INDIVIDUAL LISTAR-->
 
-		<section class="buscar_cliente">
+	<section class="buscar_cliente">
+		<div id="buscar_cliente">
 		<label for="">Buscar cliente:</label>
 		<form action="">
 			<input type="text"><br>
@@ -49,6 +50,7 @@ include('global/conexion.php')
 				<td class="datos">15</td>
 			</tr>
 		</table>
+		</div>
 </section>
 <hr>
 
@@ -84,7 +86,20 @@ include('global/conexion.php')
 
 	var form_cliente = document.getElementById('form_cliente');
 	var boton_form_cliente = document.getElementById('boton_cliente');
-	boton_form_cliente.addEventListener("click",function(){toggle(form_cliente);});
+	var buscar_cliente_div = document.getElementById('buscar_cliente');
+
+	boton_form_cliente.addEventListener("click",function(){
+		toggle(form_cliente);
+		toggle(buscar_cliente_div);
+		console.log(boton_form_cliente.value);
+		if (boton_form_cliente.innerHTML == 'Ingresar Nuevo Cliente') {
+			boton_form_cliente.innerHTML = 'Cancelar';
+			boton_form_cliente.style.backgroundColor = "red";
+			}else{
+				boton_form_cliente.innerHTML = 'Ingresar Nuevo Cliente';
+				boton_form_cliente.style.backgroundColor = "#800055";
+			}
+	});
 	
 	</script>
 </body>

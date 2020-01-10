@@ -26,6 +26,7 @@ button{
 	border-radius: 10px;
 	color: #fff;
 	cursor: pointer;
+	outline: none;
 }
 table{
 	margin-top: 5px;
