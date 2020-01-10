@@ -40,7 +40,19 @@ $tabla_movimientos = "CREATE TABLE IF NOT EXISTS fs_movimientos (
 					producto int NOT NULL,
 					fecha DATETIME DEFAULT current_timestamp())
 					ENGINE = InnoDB DEFAULT CHARSET = utf8";
-					
+
+$tabla_clientes = "CREATE TABLE IF NOT EXISTS fs_clientes(
+					id_cliente int PRIMARY KEY AUTO_INCREMENT,
+					nombre_completo VARCHAR(80) NOT NULL UNIQUE,
+					direccion VARCHAR(200) DEFAULT NULL,
+					ciudad VARCHAR(100) DEFAULT NULL,
+					provincia VARCHAR(30) DEFAULT NULL,
+					codigo_postal int DEFAULT 0000,
+					email VARCHAR(150) DEFAULT NULL,
+					telefono int DEFAULT NULL,
+					revendedora boolean DEFAULT 0,
+					descuento int DEFAULT 0)
+					ENGINE = InnoDB DEFAULT CHARSET = utf8";				
 
 $claves_foraneas = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 					usuario) references fs_usuarios (id_usuario) on delete cascade on update cascade";
@@ -52,24 +64,38 @@ $claves_foraneas2 = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 
 if ($conexion->query($tabla_usuarios)) {
 	echo "Tabla usuarios creada con exito <br>";
+}else{
+	echo "Tabla usuarios NO creada :".$conexion->error.'<br>';
 }
 
 if ($conexion->query($tabla_productos)) {
 	echo "Tabla productos creada con exito <br>";
+}else{
+	echo "Tabla productos NO creada :".$conexion->error.'<br>';
 }
 
 if ($conexion->query($tabla_movimientos)) {
 	echo "Tabla movimientos creada con exito <br>";
+}else{
+	echo "Tabla movimientos NO creada :".$conexion->error.'<br>';
+}
+
+if ($conexion->query($tabla_clientes)) {
+	echo "Tabla clientes creada con exito <br>";
+}else{
+	echo "Tabla clientes NO creada :".$conexion->error.'<br>';
 }
 
 if ($conexion->query($claves_foraneas)) {
 	echo "Claves foraneas creadas con exito <br>";
+}else{
+	echo "Clave no creada<br>";
 }
 
 if ($conexion->query($claves_foraneas2)) {
 	echo "Claves foraneas 2 creadas con exito <br>";
 }else{
-	echo "Clave no creada<br>";
+	echo "Clave2 no creada<br>";
 }
 
 if(mysqli_close($conexion)){

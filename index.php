@@ -30,6 +30,13 @@ include('header.php');
 				</p>
 			</div>
 		</div></a>
+		<a href="clientes.php"><div class="menu5 menu">
+			<div class="boton">
+				<p class="texto_boton">
+					Registro de clientes.
+				</p>
+			</div>
+		</div></a>
 		<a href=""><div class="menu4 menu">
 			<div class="boton">
 				<p class="texto_boton">

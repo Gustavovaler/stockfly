@@ -21,10 +21,10 @@
 .link{
 	list-style: none;
 	float: left;
-	width: 18%;
+	
 	background-color: #800055;
 	height: 20px;
-	padding: 5px;
+	padding: 5px 20px 5px 20px;
 	text-align: center;
 	margin: 2px;
 	margin-bottom: 10px;
@@ -36,4 +36,8 @@
 	color: #000;
 	color: #fff;
 	text-shadow: 2px 2px 1px rgba(0,0,0,0.60);
+}
+.link:hover{
+	background-color: pink;
+	transition: all .2s;
 }

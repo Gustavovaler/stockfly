@@ -48,13 +48,13 @@
 <div class="resultados">
 	<table>
 		<tr>
-			<td class="campos">Id</td>
+			<td class="art">Art.</td>
 			<td class="campos">Categoria</td>
 			<td class="campos">Modelo</td>
 			<td class="campos">Color</td>
 			<td class="campos">Estampa</td>
-			<td class="campos">Talle</td>
-			<td class="campos">Cantidad</td>
+			<td class="">Talle</td>
+			<td class="">Cantidad</td>
 		</tr>
 		<?php
 		$sql = "SELECT * FROM fs_productos";
