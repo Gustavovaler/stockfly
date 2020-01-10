@@ -61,7 +61,7 @@ include('global/conexion.php')
 	<button id="boton_cliente">Ingresar Nuevo Cliente</button>
 </div>
 	<div id="form_cliente">
-	<form action="">
+	<form action="scripts/guardar_cliente.php">
 		<input type="text">
 		<input type="text">
 		<input type="text">
@@ -72,10 +72,12 @@ include('global/conexion.php')
 		<input type="text">
 		<input type="text">
 		<input type="text">
+		<input type="submit" value="Guardar Registro">
 
 	</form>
 </div>
 </section>
+
 
 </div>
 	<script>
