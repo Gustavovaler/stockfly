@@ -58,7 +58,12 @@ include('global/conexion.php');
 				<td class="datos"><?php echo $row['email'];?></td>
 				<td class="datos"><?php echo $row['codigo_postal'];?></td>
 				<td class="datos"><?php echo $row['dni'];?></td>
-				<td class="datos"><?php echo $row['revendedora'];?></td>
+				<td class="datos"><?php if($row['revendedora']==1){
+					echo 'Si';
+				}else{
+					echo 'No';
+				}
+				;?></td>
 				<td class="datos"><?php echo $row['descuento'];?></td>
 			</tr>
 			<?php
