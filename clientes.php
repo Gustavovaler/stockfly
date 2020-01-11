@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 include('navegador.php');
-include('global/conexion.php')
+include('global/conexion.php');
 ?>
 
 <script src="js/scripts.js"></script>
@@ -14,14 +14,14 @@ include('global/conexion.php')
 	<section class="buscar_cliente">
 		<div id="buscar_cliente">
 		<label for="">Buscar cliente:</label>
-		<form action="">
-			<input type="text"><br>
+		
+			<input type="text" name="cadena"><br>
 			<button>Por Nombre</button>
 			<button>Por Provincia</button>
 			<button>Por Ciudad</button>
 			<button>Todos los clientes</button>
 			
-		</form>
+		
 		<hr>
 		<table>
 			<tr>
@@ -37,19 +37,38 @@ include('global/conexion.php')
 				<td>Desc.</td>
 
 			</tr>
-			<tr>
-				<td class="datos">juana molina</td>
-				<td class="datos">Jacinta pichimahudi 22</td>
-				<td class="datos">cordoba</td>
-				<td class="datos">cordoba</td>
-				<td class="datos">2569-8994</td>
-				<td class="datos">loo_locoparecida@gmail.com</td>
-				<td class="datos">1407</td>
-				<td class="datos">26448998</td>
-				<td class="datos">si</td>
-				<td class="datos">15</td>
+
+			<?php
+			$buscar = '';
+			
+			$sql_consultar_cliente = "SELECT * FROM fs_clientes where nombre_completo like '%".$buscar."%'";
+
+			if (!$consulta_cliente = $con->query($sql_consultar_cliente)) {
+				echo "error".$consulta_cliente->error;
+			}
+
+			foreach ($consulta_cliente as $row) {
+				?>
+				<tr>
+				<td class="datos"><?php echo $row['nombre_completo'];?></td>
+				<td class="datos"><?php echo $row['direccion'];?></td>
+				<td class="datos"><?php echo $row['ciudad'];?></td>
+				<td class="datos"><?php echo $row['provincia'];?></td>
+				<td class="datos"><?php echo $row['telefono'];?></td>
+				<td class="datos"><?php echo $row['email'];?></td>
+				<td class="datos"><?php echo $row['codigo_postal'];?></td>
+				<td class="datos"><?php echo $row['dni'];?></td>
+				<td class="datos"><?php echo $row['revendedora'];?></td>
+				<td class="datos"><?php echo $row['descuento'];?></td>
 			</tr>
+			<?php
+			}
+			?>
+			
 		</table>
+		<br>
+		<hr>
+		<span><?php echo  'Cantidad de Registros coincidentes : '.$con->affected_rows;?></span>
 		</div>
 </section>
 <hr>
@@ -63,25 +82,53 @@ include('global/conexion.php')
 	<div id="form_cliente">
 	<form action="scripts/guardar_cliente.php" method="POST">
 		<label for="nombre_completo">Nombre y Apellido</label>
-		<input type="text"  name="nombre_completo">
+		<input type="text"  name="nombre_completo" required>
 		<label for="direccion">Direccion</label>
 		<input type="text" name="direccion">
 		<label for="ciudad">Ciudad</label>
 		<input type="text" name="ciudad">
 		<label for="provincia">Provincia</label>
-		<input type="text" name="provincia">
+		<!--<input type="text" name="provincia">-->
+		
+		<select name="provincia" id="">
+			<option  name="provincia" value="">Seleccione Provincia</option>
+			<option  name="provincia" value="Buenos Aires">Buenos Aires</option>
+			<option  name="provincia" value="Catamarca">Catamarca</option>
+			<option  name="provincia" value="Chaco">Chaco</option>
+			<option  name="provincia" value="Chubut">Chubut</option>
+			<option  name="provincia" value="Cordoba">Cordoba</option>
+			<option  name="provincia" value="Corrientes">Corrientes</option>
+			<option  name="provincia" value="Entre Rios">Entre Rios</option>
+			<option  name="provincia" value="Formosa">Formosa</option>
+			<option  name="provincia" value="Jujuy">Jujuy</option>
+			<option  name="provincia" value="La Pampa">La Pampa</option>
+			<option  name="provincia" value="La Rioja">La Rioja</option>
+			<option  name="provincia" value="Mendoza">Mendoza</option>
+			<option  name="provincia" value="Misiones">Misiones</option>
+			<option name="provincia" value="Neuquen">Neuquen</option>
+			<option name="provincia" value="Rio Negro">Rio Negro</option>
+			<option name="provincia" value="Salta">Salta</option>
+			<option name="provincia" value="San Juan">San Juan</option>
+			<option name="provincia" value="San Luis">San Luis</option>
+			<option name="provincia" value="Santa Cruz">Santa Cruz</option>
+			<option name="provincia" value="Santa Fe">Santa Fe</option>
+			<option name="provincia" value="Santiago del Estero">Santiago del Estero</option>
+			<option name="provincia" value="Tierra del Fuego">Tierra del Fuego</option>
+			<option name="provincia" value="Tucuman">Tucuman</option>
+		</select>
 		<label for="telefono">Telefono</label>
-		<input type="number" name="telefono">
+		<input type="number" name="telefono" value="0">
 		<label for="email">Email</label>
 		<input type="text" name="email">
 		<label for="cod_postal">Codigo Postal</label>
-		<input type="number" name="cod_postal">
+		<input type="number" name="cod_postal" value="0">
 		<label for="dni">Dni</label>
-		<input type="number" name="dni">
+		<input type="number" name="dni" value="0">
 		<label for="revendedora">Es revendedor/a</label>
-		<input type="text" name="revendedora">
+		<input type="radio" value="1" name="revendedora"><span id="texto">Si</span>
+		<input type="radio" value="0" name="revendedora" checked><span id="texto">No</span>
 		<label for="descuento">Descuento (%)</label>
-		<input type="number" name="descuento">
+		<input type="number" name="descuento" value="0">
 		<input type="submit" value="Guardar Registro">
 
 	</form>
@@ -112,6 +159,8 @@ include('global/conexion.php')
 				boton_form_cliente.style.backgroundColor = "#800055";
 			}
 	});
+
+
 	
 	</script>
 </body>

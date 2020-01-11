@@ -1,3 +1,9 @@
+<script>
+	function guardado(){
+		alert('Cliente registrado correctamente');
+		window.location ='../clientes.php?buscar=';
+	}
+</script>
 <?php
 
 include('../global/conexion.php');
@@ -14,14 +20,15 @@ $descuento = $_POST['descuento'];
 $dni =  $_POST['dni'];
 
 
-$sql_guardar_cliente = "INSERT INTO fs_clientes (nombre_completo,direccion,ciudad,provincia,codigo_postal,
-    email,telefono,dni,descuento,revendedora) VALUES $nombre ,$direccion,$ciudad, $provincia,
-     $cod_postal, $email, $telefono, $dni, $descuento,  1";
+$sql_guardar_cliente = "INSERT INTO fs_clientes(nombre_completo,direccion,ciudad,provincia,codigo_postal,
+    email,telefono,dni,descuento,revendedora) VALUES('$nombre', '$direccion','$ciudad', '$provincia',
+     '$cod_postal', '$email', '$telefono', '$dni', '$descuento', $revendedora)";
 
+echo '<br> sql : '.$sql_guardar_cliente.'<br>';
 
     if ($con->query($sql_guardar_cliente)) {
-    	echo "Guardado";
+    	echo "<script> guardado();</script>";
     }else{
-    	echo "No Guardado ; ".$con->error;
+    	echo "No Guardado : ".$con->error.' // Cod: '.$con->errno;
     }
 ?>

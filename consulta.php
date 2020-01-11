@@ -92,5 +92,17 @@
 		infoPagina.innerHTML = 'Consulta';
 		let infoGeneral = document.getElementById('infoGeneralText');
 		infoGeneral.innerHTML = "Mensaje de la pagina consulta de stock \n No lleva password";
+
+	//---consultas a la db-------
+
+	var conexion_js = new XMLHttpRequest();
+	conexion_js.onreadystatechange = function(){
+		if (this.readyState == 4 && this.status ==200) {
+			console.log(this.responseText);
+		}
+	};
+	conexion_js.open('GET','scripts/consultasimple.php',true);
+	conexion_js.send();
+
 </script>	
 </body>

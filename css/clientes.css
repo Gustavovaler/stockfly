@@ -15,6 +15,10 @@ input{
 	padding: 5px;
 	border: 1px solid teal;
 	margin-bottom: 15px;
+	outline: none;
+}
+input:focus{
+	background-color: #ffeaea;+
 }
 button{
 	background-color: #800055;
@@ -49,4 +53,23 @@ table{
 }
 .boton{
 	padding: 10px;
+}
+#texto{
+	padding: 5px;
+	margin: 5px 5px 10px 0px;
+	color: teal;
+	font-weight: bold;
+}
+input[type='radio']{
+	width: 10%;
+}
+select{
+	width: 51%;
+	border: 1px solid teal;
+	border-radius: 5px;
+	font-size: 1.2em;
+	padding: 3px;
+	color: teal;
+	outline: none;
+	margin-bottom: 10px;
 }

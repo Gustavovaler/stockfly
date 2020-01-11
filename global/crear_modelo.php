@@ -49,7 +49,8 @@ $tabla_clientes = "CREATE TABLE IF NOT EXISTS fs_clientes(
 					provincia VARCHAR(30) DEFAULT NULL,
 					codigo_postal int DEFAULT 0000,
 					email VARCHAR(150) DEFAULT NULL,
-					telefono int DEFAULT NULL,
+					telefono bigint DEFAULT NULL,
+					dni int DEFAULT NULL,
 					revendedora boolean DEFAULT 0,
 					descuento int DEFAULT 0)
 					ENGINE = InnoDB DEFAULT CHARSET = utf8";				
@@ -65,37 +66,37 @@ $claves_foraneas2 = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 if ($conexion->query($tabla_usuarios)) {
 	echo "Tabla usuarios creada con exito <br>";
 }else{
-	echo "Tabla usuarios NO creada :".$conexion->error.'<br>';
+	echo "Tabla usuarios NO creada :".$conexion->error.'Cod:'.$conexion->errno.'<br>';
 }
 
 if ($conexion->query($tabla_productos)) {
 	echo "Tabla productos creada con exito <br>";
 }else{
-	echo "Tabla productos NO creada :".$conexion->error.'<br>';
+	echo "Tabla productos NO creada :".$conexion->error.'Cod:'.$conexion->errno.'<br>';
 }
 
 if ($conexion->query($tabla_movimientos)) {
 	echo "Tabla movimientos creada con exito <br>";
 }else{
-	echo "Tabla movimientos NO creada :".$conexion->error.'<br>';
+	echo "Tabla movimientos NO creada :".$conexion->error.'Cod:'.$conexion->errno.'<br>';
 }
 
 if ($conexion->query($tabla_clientes)) {
 	echo "Tabla clientes creada con exito <br>";
 }else{
-	echo "Tabla clientes NO creada :".$conexion->error.'<br>';
+	echo "Tabla clientes NO creada :".$conexion->error.'Cod:'.$conexion->errno.'<br>';
 }
 
 if ($conexion->query($claves_foraneas)) {
 	echo "Claves foraneas creadas con exito <br>";
 }else{
-	echo "Clave no creada<br>";
+	echo "Clave no creadaCod:".$conexion->errno.'<br>';
 }
 
 if ($conexion->query($claves_foraneas2)) {
 	echo "Claves foraneas 2 creadas con exito <br>";
 }else{
-	echo "Clave2 no creada<br>";
+	echo "Clave2 no creadaCod:".$conexion->errno.'<br>';
 }
 
 if(mysqli_close($conexion)){
