@@ -61,17 +61,27 @@ include('global/conexion.php')
 	<button id="boton_cliente">Ingresar Nuevo Cliente</button>
 </div>
 	<div id="form_cliente">
-	<form action="scripts/guardar_cliente.php">
-		<input type="text">
-		<input type="text">
-		<input type="text">
-		<input type="text">
-		<input type="text">
-		<input type="text">
-		<input type="text">
-		<input type="text">
-		<input type="text">
-		<input type="text">
+	<form action="scripts/guardar_cliente.php" method="POST">
+		<label for="nombre_completo">Nombre y Apellido</label>
+		<input type="text"  name="nombre_completo">
+		<label for="direccion">Direccion</label>
+		<input type="text" name="direccion">
+		<label for="ciudad">Ciudad</label>
+		<input type="text" name="ciudad">
+		<label for="provincia">Provincia</label>
+		<input type="text" name="provincia">
+		<label for="telefono">Telefono</label>
+		<input type="number" name="telefono">
+		<label for="email">Email</label>
+		<input type="text" name="email">
+		<label for="cod_postal">Codigo Postal</label>
+		<input type="number" name="cod_postal">
+		<label for="dni">Dni</label>
+		<input type="number" name="dni">
+		<label for="revendedora">Es revendedor/a</label>
+		<input type="text" name="revendedora">
+		<label for="descuento">Descuento (%)</label>
+		<input type="number" name="descuento">
 		<input type="submit" value="Guardar Registro">
 
 	</form>
