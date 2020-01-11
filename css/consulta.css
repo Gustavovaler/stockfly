@@ -47,3 +47,15 @@ table{
 	font-size: 1.1em;
 	background-color: #eeffff;
 }
+button{
+	background-color: #800055;
+	height: 40px;
+	padding: 5px 20px 5px 20px;
+	text-align: center;
+	margin: 2px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	color: #fff;
+	cursor: pointer;
+	outline: none;
+}

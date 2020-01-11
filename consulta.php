@@ -45,6 +45,11 @@
 	<option class="opcion" value="">Enterito</option>
 	<option class="opcion" value="">Shot</option>
 </select>
+
+<hr>
+<button id="todos_productos" onclick="pedirDatos()">Ver todos los productos</button>
+
+<!--/*******************************************************-->
 <label for="">Resultados</label>
 <div class="resultados">
 	<table>
@@ -57,26 +62,9 @@
 			<td class="">Talle</td>
 			<td class="">Cantidad</td>
 		</tr>
-		<?php
-		$sql = "SELECT * FROM fs_productos";
-
-
-		$consulta = $con->query($sql);
-
-		foreach ($consulta as $key) {		
-		?>
-		<tr>
-			<td class="datos id_producto"><?php echo $key['id_producto'];?></td>
-			<td class="datos categoria"><?php echo $key['categoria'];?></td>
-			<td class="datos modelo"><?php echo $key['modelo'];?></td>
-			<td class="datos color"><?php echo $key['color'];?></td>
-			<td class="datos estampa"><?php echo $key['estampa'];?></td>
-			<td class="datos talle"><?php echo $key['talle'];?></td>
-			<td class="datos cantidad"><?php echo $key['cantidad'];?></td>
-		</tr>
-		<?php
-	}
-	?>
+		<table id="data_recuperada">
+			
+		</table>
 	</table> 
 </div>
 
@@ -88,21 +76,30 @@
 
 
 <script>
+
 		let infoPagina = document.getElementById('infoPagina');
 		infoPagina.innerHTML = 'Consulta';
 		let infoGeneral = document.getElementById('infoGeneralText');
 		infoGeneral.innerHTML = "Mensaje de la pagina consulta de stock \n No lleva password";
 
 	//---consultas a la db-------
+	var data_recuperada = document.getElementById('data_recuperada');
+	
+
 
 	var conexion_js = new XMLHttpRequest();
-	conexion_js.onreadystatechange = function(){
+
+	function pedirDatos(){		
+		conexion_js.onreadystatechange = function(){
 		if (this.readyState == 4 && this.status ==200) {
-			console.log(this.responseText);
+			data_recuperada.innerHTML = this.responseText;
 		}
 	};
-	conexion_js.open('GET','scripts/consultasimple.php',true);
+}
+	conexion_js.open('GET','scripts/consulta_articulo.php',true);
 	conexion_js.send();
+
+
 
 </script>	
 </body>
