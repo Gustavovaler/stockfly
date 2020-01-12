@@ -95,9 +95,10 @@
 			data_recuperada.innerHTML = this.responseText;
 		}
 	};
-}
 	conexion_js.open('GET','scripts/consulta_articulo.php',true);
 	conexion_js.send();
+}
+	
 
 
 
