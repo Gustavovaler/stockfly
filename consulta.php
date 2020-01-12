@@ -23,6 +23,12 @@ include('navegador.php');
 
 </div>
 <script>
+	let infoPagina = document.getElementById('infoPagina');
+	infoPagina.innerHTML = 'Consulta';
+	let infoGeneral = document.getElementById('infoGeneralText');
+		infoGeneral.innerHTML = "Pagina de inicio. No hay mensajes";
+
+
 	var div_respuesta = document.getElementById('respuesta');
 	var entrada = document.getElementById('entrada');
 	entrada.addEventListener("keyup",function(){

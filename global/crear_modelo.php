@@ -22,10 +22,10 @@ $tabla_usuarios = "CREATE TABLE IF NOT EXISTS fs_usuarios(
 
 $tabla_productos = "CREATE TABLE IF NOT EXISTS fs_productos(
 					id_producto int PRIMARY KEY AUTO_INCREMENT,
-					descripcion VARCHAR(80) NOT NULL,
+					descripcion VARCHAR(80) NOT NULL UNIQUE,
 					color VARCHAR(30) NOT NULL,
 					cantidad int  DEFAULT 0,
-					talle int DEFAULT NULL,
+					talle VARCHAR(8) DEFAULT NULL,
 					estampa VARCHAR(100) DEFAULT NULL,
 					variante VARCHAR(50) DEFAULT NULL,
 					combinacion VARCHAR(40) DEFAULT NULL,
@@ -71,8 +71,8 @@ $claves_foraneas = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 $claves_foraneas2 = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 					producto) references fs_productos (id_producto) on delete cascade on update cascade";
 
-$claves_foraneas3 = "ALTER TABLE fs_modelo add FOREIGN KEY (
-					categoria) references fs_categoria (id_categoria) on delete cascade on update cascade";
+/*$claves_foraneas3 = "ALTER TABLE fs_modelo add FOREIGN KEY (
+					categoria) references fs_categoria (id_categoria) on delete cascade on update cascade";*/
 
 if ($conexion->query($tabla_usuarios)) {
 	echo "Tabla usuarios creada con exito <br>";
@@ -120,11 +120,11 @@ if ($conexion->query($tabla_modelo)) {
 }else{
 	echo "Tabla modelo No creada Cod:".$conexion->errno.'<br>';
 }
-if ($conexion->query($claves_foraneas3)) {
+/*if ($conexion->query($claves_foraneas3)) {
 	echo "Claves foraneas 3 creadas con exito <br>";
 }else{
 	echo "Clave3 no creadaCod:".$conexion->errno.'//'.$conexion->error.'<br>';
-}
+}*/
 
 if(mysqli_close($conexion)){
 	echo "Conexion Cerrada";
