@@ -53,7 +53,18 @@ $tabla_clientes = "CREATE TABLE IF NOT EXISTS fs_clientes(
 					dni int DEFAULT NULL,
 					revendedora boolean DEFAULT 0,
 					descuento int DEFAULT 0)
-					ENGINE = InnoDB DEFAULT CHARSET = utf8";				
+					ENGINE = InnoDB DEFAULT CHARSET = utf8";
+
+$tabla_categoria = "CREATE TABLE IF NOT EXISTS fs_categoria(
+					id_categoria int PRIMARY KEY AUTO_INCREMENT,
+					categoria VARCHAR(50) NOT NULL)
+					ENGINE= InnoDB DEFAULT CHARSET = utf8";
+					
+$tabla_modelo =    "CREATE TABLE IF NOT EXISTS fs_modelo(
+					id_modelo int PRIMARY KEY AUTO_INCREMENT,
+					modelo VARCHAR (60) NOT NULL,
+					categoria INT NOT NULL)
+					ENGINE  = InnoDB DEFAULT CHARSET = utf8";				
 
 $claves_foraneas = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 					usuario) references fs_usuarios (id_usuario) on delete cascade on update cascade";
@@ -61,7 +72,8 @@ $claves_foraneas = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 $claves_foraneas2 = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 					producto) references fs_productos (id_producto) on delete cascade on update cascade";
 
-
+$claves_foraneas3 = "ALTER TABLE fs_modelo add FOREIGN KEY (
+					categoria) references fs_categoria (id_categoria) on delete cascade on update cascade";
 
 if ($conexion->query($tabla_usuarios)) {
 	echo "Tabla usuarios creada con exito <br>";
@@ -97,6 +109,22 @@ if ($conexion->query($claves_foraneas2)) {
 	echo "Claves foraneas 2 creadas con exito <br>";
 }else{
 	echo "Clave2 no creadaCod:".$conexion->errno.'<br>';
+}
+
+if ($conexion->query($tabla_categoria)) {
+	echo "Tabla categoria creada con exito <br>";
+}else{
+	echo "Tabla categoria no creadaCod:".$conexion->errno.'<br>';
+}
+if ($conexion->query($tabla_modelo)) {
+	echo "Tabla modelo creada con exito <br>";
+}else{
+	echo "Tabla modelo No creada Cod:".$conexion->errno.'<br>';
+}
+if ($conexion->query($claves_foraneas3)) {
+	echo "Claves foraneas 3 creadas con exito <br>";
+}else{
+	echo "Clave3 no creadaCod:".$conexion->errno.'//'.$conexion->error.'<br>';
 }
 
 if(mysqli_close($conexion)){

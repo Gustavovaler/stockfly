@@ -19,31 +19,26 @@
 	<label for="producto">Categoría</label>
 </div>
 <select name="producto" id="selectCategoria">
-	<option class="opcion" value="Pantalon">Seleccione Articulo </option>
-	<option class="opcion" value="">Remera </option>
-	<option class="opcion" value="">Musculosa</option>
-	<option class="opcion" value="">Malla</option>
-	<option class="opcion" value="">Sudadera</option>
-	<option class="opcion" value="">Pollerin</option>
-	<option class="opcion" value="">Medias</option>
-	<option class="opcion" value="">Tutu</option>
-	<option class="opcion" value="">Enterito</option>
-	<option class="opcion" value="">Shot</option>
+	<option class="opcion">Seleccione Articulo </option>
+	<?php 
+	$sql_categoria = "SELECT categoria FROM fs_categoria";
+
+	$consulta_cat = $con->query($sql_categoria);
+	foreach ($consulta_cat as $cat) {
+		?>
+         <option class="opcion" value="<?php echo $cat['categoria'];?> "><?php echo $cat['categoria'];?> </option>
+	<?php
+	}
+	?>	
+
 </select>
 	<div class="subCategoria">
-	<label for="subProducto">Sub Categoría</label>
+	<label for="subProducto">Modelo</label>
 </div>
 <select name="subProducto" id="selectCategoria">
-	<option class="opcion" value="Pantalon">Seleccione Modelo </option>
-	<option class="opcion" value="">Remera </option>
-	<option class="opcion" value="">Musculosa</option>
-	<option class="opcion" value="">Malla</option>
-	<option class="opcion" value="">Sudadera</option>
-	<option class="opcion" value="">Pollerin</option>
-	<option class="opcion" value="">Medias</option>
-	<option class="opcion" value="">Tutu</option>
-	<option class="opcion" value="">Enterito</option>
-	<option class="opcion" value="">Shot</option>
+	<option class="opcion" value="">Seleccione Modelo </option>
+      <div id="opciones_modelo"></div>
+
 </select>
 
 <hr>
@@ -84,8 +79,14 @@
 
 	//---consultas a la db-------
 	var data_recuperada = document.getElementById('data_recuperada');
-	
 
+	var selectCategoria = document.getElementById('selectCategoria');
+	selectCategoria.addEventListener("mouseout", function(){
+		cargarModelos();
+	});
+
+	var opciones_modelo = document.getElementById('opciones_modelo');
+	
 
 	var conexion_js = new XMLHttpRequest();
 
@@ -98,6 +99,18 @@
 	conexion_js.open('GET','scripts/consulta_articulo.php',true);
 	conexion_js.send();
 }
+
+function cargarModelos(){
+	conexion_js.onreadystatechange = function(){
+		if (this.readyState == 4 && this.status == 200) {
+			opciones_modelo.innerHTML = this.responseText;
+		}
+	}
+	conexion_js.open('GET','scripts/cargar_modelo.php?id_categoria=1',true);
+	conexion_js.send();
+}
+
+
 	
 
 
