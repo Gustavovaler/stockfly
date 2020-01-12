@@ -35,11 +35,11 @@
 	<div class="subCategoria">
 	<label for="subProducto">Modelo</label>
 </div>
-<select name="subProducto" id="selectCategoria">
+<select name="subProducto" id="selectModelo">
 	<option class="opcion" value="">Seleccione Modelo </option>
-      <div id="opciones_modelo"></div>
+      </select>
 
-</select>
+
 
 <hr>
 <button id="todos_productos" onclick="pedirDatos()">Ver todos los productos</button>
@@ -63,11 +63,8 @@
 	</table> 
 </div>
 
-
-
 <!--******fin container************-->
 </div>
-
 
 
 <script>
@@ -78,37 +75,41 @@
 		infoGeneral.innerHTML = "Mensaje de la pagina consulta de stock \n No lleva password";
 
 	//---consultas a la db-------
-	var data_recuperada = document.getElementById('data_recuperada');
-
-	var selectCategoria = document.getElementById('selectCategoria');
-	selectCategoria.addEventListener("mouseout", function(){
-		cargarModelos();
-	});
-
-	var opciones_modelo = document.getElementById('opciones_modelo');
 	
+		var opciones = document.getElementById('selectModelo');
+		var selectCategoria = document.getElementById('selectCategoria');
+		selectCategoria.addEventListener("focusout", function(){
+			cargarModelos();
+		});
+	    var data_recuperada = document.getElementById('data_recuperada');
+		var conexion_js = new XMLHttpRequest();
 
-	var conexion_js = new XMLHttpRequest();
+	//----------- FUNCIONES --------------------
 
-	function pedirDatos(){		
-		conexion_js.onreadystatechange = function(){
-		if (this.readyState == 4 && this.status ==200) {
-			data_recuperada.innerHTML = this.responseText;
-		}
-	};
-	conexion_js.open('GET','scripts/consulta_articulo.php',true);
-	conexion_js.send();
-}
+		//------CARGA EL TOTAL DE LOS ARTICULOS ---
 
-function cargarModelos(){
-	conexion_js.onreadystatechange = function(){
-		if (this.readyState == 4 && this.status == 200) {
-			opciones_modelo.innerHTML = this.responseText;
-		}
+		function pedirDatos(){		
+			conexion_js.onreadystatechange = function(){
+			if (this.readyState == 4 && this.status ==200) {
+				data_recuperada.innerHTML = this.responseText;				
+			}
+		};
+		conexion_js.open('GET','scripts/consulta_articulo.php',true);
+		conexion_js.send();
 	}
-	conexion_js.open('GET','scripts/cargar_modelo.php?id_categoria=1',true);
-	conexion_js.send();
-}
+
+	
+       //----LLENA EL SELECT DE MODELOS ----
+	function cargarModelos(){
+		conexion_js.onreadystatechange = function(){
+			if (this.readyState == 4 && this.status == 200) {
+				opciones.innerHTML = this.responseText;
+				
+			}
+		}
+		conexion_js.open('GET','scripts/cargar_modelo.php?id_categoria=2',true);
+		conexion_js.send();
+	}
 
 
 	

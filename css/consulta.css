@@ -11,6 +11,16 @@
 	
 }
 
+#selectModelo{
+	width: 50%;
+	font-size: 1.4em;
+	color: #970184;
+	border-radius: 5px;
+	padding: 5px;
+	border-color: teal;
+	margin-bottom: 15px;
+	
+}
 .opcion{
 	
 }
