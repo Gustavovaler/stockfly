@@ -1,29 +1,18 @@
 
 
-#selectCategoria{
+#entrada{
 	width: 50%;
 	font-size: 1.4em;
 	color: #970184;
 	border-radius: 5px;
 	padding: 5px;
-	border-color: teal;
+	border-color:1px solid  teal;
 	margin-bottom: 15px;
+	outline: none;
 	
 }
 
-#selectModelo{
-	width: 50%;
-	font-size: 1.4em;
-	color: #970184;
-	border-radius: 5px;
-	padding: 5px;
-	border-color: teal;
-	margin-bottom: 15px;
-	
-}
-.opcion{
-	
-}
+
 label{
 	padding: 5px;
 	margin: 5px 5px 10px 0px;

@@ -22,8 +22,7 @@ $tabla_usuarios = "CREATE TABLE IF NOT EXISTS fs_usuarios(
 
 $tabla_productos = "CREATE TABLE IF NOT EXISTS fs_productos(
 					id_producto int PRIMARY KEY AUTO_INCREMENT,
-					categoria VARCHAR(30) NOT NULL,
-					modelo VARCHAR(40) DEFAULT NULL,
+					descripcion VARCHAR(80) NOT NULL,
 					color VARCHAR(30) NOT NULL,
 					cantidad int  DEFAULT 0,
 					talle int DEFAULT NULL,
