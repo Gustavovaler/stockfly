@@ -1,3 +1,10 @@
+<script>
+	function guardado(){
+		alert('Modelo registrado correctamente');
+		window.location ='../alta_baja.php?buscar=';
+	}
+</script>
+
 <?php
 include('../global/conexion.php');
 $descripcion =  $_GET['descripcion'];
@@ -9,16 +16,19 @@ $cantidad = $_GET['cantidad'];
 $combinacion = $_GET['combinacion'];
 $estampa = $_GET['estampa'];
 
-echo  $descripcion.'//'.$color.'//'.$talle.'//'.$obs.'//'.$variante.'//'.$cantidad.'//'.$combinacion.'//'.$estampa;
 
 $sql_guardar_nuevo = "INSERT INTO fs_productos (descripcion,talle,color,cantidad,variante,combinacion,obs,estampa)VALUES(
 	'$descripcion','$talle','$color','$cantidad','$variante','$combinacion','$obs','$estampa')";
-	echo $sql_guardar_nuevo;
+	
 
 if($con->query($sql_guardar_nuevo)){
-	echo "Guardado";
+	echo "<script> guardado();</script>";
 }else{
-	echo "No guardado :".$con->error;
+	if($con->errno == 1062){
+		echo "No guardado :".$con->error.'//'.$con->errno;
+		echo "<script> alert('NO GUARDADO !! ESE ARTICULO YA EXISTE !!!'); window.location = '../alta_baja.php?buscar=';</script>";
+	}
+	
 }
 ;
 
