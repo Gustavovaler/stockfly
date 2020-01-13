@@ -16,13 +16,7 @@ include('header.php');
 				</p>
 			</div>
 		</div></a>
-		<a href=""><div class="menu2 menu">
-			<div class="boton">
-				<p class="texto_boton">
-					Orden de pedido.
-				</p>
-			</div>
-		</div></a>
+		
 		<a href="alta_baja.php"><div class="menu3 menu">
 			<div class="boton">
 				<p class="texto_boton">
@@ -30,6 +24,23 @@ include('header.php');
 				</p>
 			</div>
 		</div></a>
+
+		<a href=""><div class="menu2 menu">
+			<div class="boton">
+				<p class="texto_boton">
+					Orden de pedido.
+				</p>
+			</div>
+		</div></a>
+
+		<a href="ventas.php"><div class="menu3 menu">
+			<div class="boton">
+				<p class="texto_boton">
+					Ventas.
+				</p>
+			</div>
+		</div></a>
+		
 		<a href="clientes.php?buscar="><div class="menu5 menu">
 			<div class="boton">
 				<p class="texto_boton">

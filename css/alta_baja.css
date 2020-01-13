@@ -23,3 +23,11 @@
 	box-shadow:  inset -10px -5px 5px rgba(255,255,255,0.50);
 	text-shadow:2px 2px 1px rgba(0,0,0,0.6) ;
 }
+.datos{
+	font-size: 0.8em;
+}
+.pista{
+	color: #666666;
+	margin-left: 15px;
+	font-size: .8em;
+}

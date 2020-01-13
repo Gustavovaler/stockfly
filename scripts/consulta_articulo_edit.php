@@ -23,15 +23,13 @@
 				<td class="datos cantidad" width="5%"><?php echo $key['cantidad'];?></td>
 				<td class="datos combinacion" width="12%"><?php echo $key['combinacion'];?></td>
 				<td class="datos obs" width="12%"><?php echo $key['obs'];?></td>
-				
+				<td class="datos botones" width="16%">
+					<button>Edit</button><button>Borrar</button>
+				</td>
 			</tr>
 			<?php
 		
-			}
-			
-			
-			
-		}
+			}}
+
 	}
 	?>
-	<?php echo  '<script>filas = '.$con->affected_rows.';</script>';?>
