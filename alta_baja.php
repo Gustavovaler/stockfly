@@ -4,7 +4,6 @@ include('navegador.php');
 ?>
 <link rel="stylesheet" href="css/alta_baja.css">
 <link rel="stylesheet" href="css/consulta.css">
-<link rel="stylesheet" href="css/alta_baja.css">
 <script src="js/scripts.js"></script>
 <body>
 	<div class="container">

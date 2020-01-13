@@ -76,3 +76,8 @@ select{
 	outline: none;
 	margin-bottom: 10px;
 }
+.pista{
+	color: #666666;
+	margin-left: 15px;
+	font-size: .8em;
+}

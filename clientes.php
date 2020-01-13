@@ -86,15 +86,20 @@ include('global/conexion.php');
 </div>
 	<div id="form_cliente">
 	<form action="scripts/guardar_cliente.php" method="POST">
-		<label for="nombre_completo">Nombre y Apellido</label>
-		<input type="text"  name="nombre_completo" required>
+
+		<label for="nombre_completo">Nombre y Apellido</label>		
+		<input type="text"  name="nombre_completo" maxlength="80" required>
+		<span class="pista">Maximo 80 caracteres. Obligatorio.</span>
+
 		<label for="direccion">Direccion</label>
-		<input type="text" name="direccion">
+		<input type="text" name="direccion" maxlength="200">
+		<span class="pista"> Maximo 20 caracteres. Opcional.</span>
+
 		<label for="ciudad">Ciudad</label>
-		<input type="text" name="ciudad">
-		<label for="provincia">Provincia</label>
-		<!--<input type="text" name="provincia">-->
-		
+		<input type="text" name="ciudad" maxlength="100">
+		<span class="pista">Maximo 100 caracteres. Opcional.</span>
+
+		<label for="provincia">Provincia</label>		
 		<select name="provincia" id="">
 			<option  name="provincia" value="">Seleccione Provincia</option>
 			<option  name="provincia" value="Buenos Aires">Buenos Aires</option>
@@ -121,27 +126,38 @@ include('global/conexion.php');
 			<option name="provincia" value="Tierra del Fuego">Tierra del Fuego</option>
 			<option name="provincia" value="Tucuman">Tucuman</option>
 		</select>
+
 		<label for="telefono">Telefono</label>
-		<input type="number" name="telefono" value="0">
+		<input type="number" name="telefono" value="0" maxlength="18">
+		<span class="pista">Hasta 18 numeros Opcional</span>
+
 		<label for="email">Email</label>
-		<input type="text" name="email">
+		<input type="text" name="email" maxlength="150">
+		<span class="pista">Maximo 150 caracteres. Opcional</span>
+
 		<label for="cod_postal">Codigo Postal</label>
-		<input type="number" name="cod_postal" value="0">
+		<input type="number" name="cod_postal" value="0" maxlength="6">
+		<span class="pista">Hasta 6 numeros.Opcional</span>
+
 		<label for="dni">Dni</label>
-		<input type="number" name="dni" value="0">
+		<input type="number" name="dni" value="0" maxlength="9">
+		<span class="pista">Hasta 9 numeros</span>
+
 		<label for="revendedora">Es revendedor/a</label>
 		<input type="radio" value="1" name="revendedora"><span id="texto">Si</span>
-		<input type="radio" value="0" name="revendedora" checked><span id="texto">No</span>
-		<label for="descuento">Descuento (%)</label>
-		<input type="number" name="descuento" value="0">
+		<input type="radio" value="0" name="revendedora" checked><span id="texto">No</span><span class="pista">Opcional. Predeterminado: NO.</span>
+		<label for="descuento" >Descuento (%)</label>
+		<input type="number" name="descuento" value="0" maxlength="4">
+		<span class="pista">Hasta 4 numeros. Opcional</span>
+
 		<input type="submit" value="Guardar Registro">
 
 	</form>
 </div>
 </section>
-
-
 </div>
+
+
 	<script>
 		let infoPagina = document.getElementById('infoPagina');
 	infoPagina.innerHTML = 'Clientes';
