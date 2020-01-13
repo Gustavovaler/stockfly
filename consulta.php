@@ -3,6 +3,7 @@ include('header.php');
 include('global/conexion.php');
 include('navegador.php');
 ?>
+<script src="js/scripts.js"></script>
 <link rel="stylesheet" href="css/consulta.css">
 <div class="container">
 
@@ -37,28 +38,8 @@ include('navegador.php');
 	var entrada = document.getElementById('entrada');
 	entrada.addEventListener("keyup",function(){
 
-		consultarProducto(entrada.value);
+		consultarDb('GET','scripts/consulta_articulo.php?cadena='+entrada.value,div_respuesta);
 	});
-
-	
-
-	function consultarProducto(cadena){
-		let conn = new XMLHttpRequest();
-		conn.onreadystatechange = function(){
-			if (this.readyState == 4 && this.status == 200) {
-				div_respuesta.innerHTML = this.responseText;				
-			
-			}
-		}
-		conn.open('GET','scripts/consulta_articulo.php?cadena='+entrada.value,true);
-		conn.send()
-
-	}
-	
-	
-		
-	
-
 	
 	
 </script>

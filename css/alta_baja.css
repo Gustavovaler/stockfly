@@ -5,7 +5,9 @@
 	color: #800055;
 }
 #art_nuevo{
+	transition: all 0.4s ease-in-out 0.4s;
 	display: none;
+
 }
 .separador{
 	height: 1.2em;

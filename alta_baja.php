@@ -92,15 +92,16 @@ include('navegador.php');
 		
 
 		//--------- FUNCIONES--------
-
-		var div_respuesta = document.getElementById('respuesta');
+	
+	var div_respuesta = document.getElementById('respuesta');
 	var entrada = document.getElementById('entrada');
 	entrada.addEventListener("keyup",function(){
 
-		consultarProducto(entrada.value);
+		//consultarProducto(entrada.value);
+		consultarDb('GET','scripts/consulta_articulo_edit.php?cadena='+entrada.value,div_respuesta);
 	});
 
-	function consultarProducto(cadena){
+	/*function consultarProducto(cadena){
 		let conn = new XMLHttpRequest();
 		conn.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
@@ -108,9 +109,9 @@ include('navegador.php');
 			}
 		}
 		conn.open('GET','scripts/consulta_articulo_edit.php?cadena='+entrada.value,true);
-		conn.send()
+		conn.send();
 
-	}
+	}*/
 		
 
 
