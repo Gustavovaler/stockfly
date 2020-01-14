@@ -11,6 +11,16 @@
 	outline: none;
 	
 }
+#entrada_producto{
+	width: 50%;
+	font-size: 1.4em;
+	color: #970184;
+	border-radius: 5px;
+	padding: 5px;
+	border-color:1px solid  teal;
+	margin-bottom: 15px;
+	outline: none;
+}
 
 
 label{
