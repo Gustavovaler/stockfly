@@ -1,0 +1,24 @@
+
+
+.info_general2{
+	
+	margin: 10px auto;
+	font-size: 1em;
+	background-color: #00b0b0;
+	padding: 10px;
+	box-shadow:  inset -10px -5px 5px rgba(255,255,255,0.50);
+	border: 2px solid #fcfcfc;
+	color: #fff;
+	text-align: center;
+	border-radius: 8px;
+}
+.info_general2 p{
+	text-shadow: 2px 2px 1px rgba(0,0,0,0.6);
+}
+#pedido{
+	min-height: 400px;
+}
+
+#cliente_seleccionado_nombre{
+	font-size: 1.5em;
+}

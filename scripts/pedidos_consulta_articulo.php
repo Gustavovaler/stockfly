@@ -24,9 +24,9 @@
 				<td class="datos combinacion" width="10%"><?php echo $key['combinacion'];?></td>
 				<td class="datos obs" width="10%"><?php echo $key['obs'];?></td>
 				<?php 
-					if ($con->affected_rows == 1) {
+					if ($con->affected_rows != 0) {
 						?>
-						<td class="datos" width="20%"><button onclick="agregarAlPedido(<?php echo $key['descripcion'];?>)">Seleccionar</button></td>
+						<td class="datos" width="20%"><button onclick="agregarAlPedido(<?php echo $key['id_producto'];?>)">Seleccionar</button></td>
 									
 								
 					<?php	

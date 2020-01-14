@@ -3,6 +3,7 @@ include('header.php');
 include('navegador.php');
 ?>
 <link rel="stylesheet" href="css/consulta">
+<link rel="stylesheet" href="css/pedidos.css">
 <script src="js/scripts.js"></script>
 <body>
 	<div class="container">
@@ -46,15 +47,19 @@ include('navegador.php');
 
 			</div>
 			</div>
-		
+			
+		<div class="info_general2">
+			
+		</div>
+		<label for="">Cliente:</label>
 <!--		------------- DIV PEDIDO ----------------->	
     	<div id="pedido">
-    		<div id="cliente_seleccionado_nombre">
-    			
+    		<div >
+    			<label for="" id="cliente_seleccionado_nombre"></label>
     		</div>
-    		<div id="articulos_seleccionados">
+    		<table id="articulos_seleccionados">
     			
-    		</div>
+    		</table>
 			
 		</div>
 	</div><!-----Fin Container ------>
@@ -92,7 +97,9 @@ include('navegador.php');
 
 	}
 
-	var agregarAlPedido = function(){
+	var agregarAlPedido = function(id_producto){
+		let articulos_seleccionados = document.getElementById('articulos_seleccionados');
+		articulos_seleccionados.insertAdjacentHTML('beforeend','<tr><td>'+id_producto+'</td></tr>');
 		
 	}
 
