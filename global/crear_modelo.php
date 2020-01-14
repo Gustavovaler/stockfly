@@ -63,7 +63,22 @@ $tabla_modelo =    "CREATE TABLE IF NOT EXISTS fs_modelo(
 					id_modelo int PRIMARY KEY AUTO_INCREMENT,
 					modelo VARCHAR (60) NOT NULL,
 					categoria INT NOT NULL)
-					ENGINE  = InnoDB DEFAULT CHARSET = utf8";				
+					ENGINE  = InnoDB DEFAULT CHARSET = utf8";
+
+$tabla_pedido = " id_pedido
+					id_pedido_lista
+					id_cliente
+					fecha
+					responsable
+					senia
+					pagado_total
+					fecha_entrega
+					entregado
+
+					"	;
+$tabla_pedido_lista = "
+						id_pedido_lista
+						"			
 
 $claves_foraneas = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 					usuario) references fs_usuarios (id_usuario) on delete cascade on update cascade";
