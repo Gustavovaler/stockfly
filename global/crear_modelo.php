@@ -65,20 +65,25 @@ $tabla_modelo =    "CREATE TABLE IF NOT EXISTS fs_modelo(
 					categoria INT NOT NULL)
 					ENGINE  = InnoDB DEFAULT CHARSET = utf8";
 
-$tabla_pedido = " id_pedido
-					id_pedido_lista
-					id_cliente
-					fecha
-					responsable
-					senia
-					pagado_total
-					fecha_entrega
-					entregado
+$tabla_pedido =    " CREATE TABLE IF NOT EXISTS fs_pedido(
+					id_pedido INT PRIMARY KEY AUTO_INCREMENT,
+					id_cliente INT NOT NULL,
+					fecha timestamp DEFAULT current_timestamp(),
+					id_usuario int NOT NULL,
+					senia DECIMAL (10,2),
+					pagado_total INT DEFAULT NULL,
+					fecha_entrega VARCHAR(15) DEFAULT NULL,
+					entregado VARCHAR (10) DEFAULT NULL,
+					importe_total decimal (10,2) NOT NULL,
+					saldo decimal (10,2) DEFAULT null)
+					ENGINE = InnoDB DEFAULT CHARSET =utf8";
 
-					"	;
-$tabla_pedido_lista = "
-						id_pedido_lista
-						"			
+$tabla_pedido_lista = "CREATE TABLE IF NOT EXISTS fs_pedido_lista(
+						id_pedido_lista INT PRIMARY KEY AUTO_INCREMENT,
+						id_pedido INT NOT NULL,
+						id_producto INT NOT NULL)
+						ENGINE = InnoDB DEFAULT CHARSET = utf8";
+								
 
 $claves_foraneas = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 					usuario) references fs_usuarios (id_usuario) on delete cascade on update cascade";
@@ -86,8 +91,18 @@ $claves_foraneas = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 $claves_foraneas2 = "ALTER TABLE fs_movimientos add FOREIGN KEY (
 					producto) references fs_productos (id_producto) on delete cascade on update cascade";
 
-/*$claves_foraneas3 = "ALTER TABLE fs_modelo add FOREIGN KEY (
-					categoria) references fs_categoria (id_categoria) on delete cascade on update cascade";*/
+$claves_foraneas3 = "ALTER TABLE fs_pedido add FOREIGN KEY (
+					id_cliente) references fs_clientes (id_cliente) on delete cascade on update cascade";
+
+
+$claves_foraneas4 = "ALTER TABLE fs_pedido add FOREIGN KEY (
+					id_usuario) references fs_usuarios (id_usuario) on delete cascade on update cascade";
+
+$claves_foraneas5 = "ALTER TABLE fs_pedido_lista add FOREIGN KEY (
+					id_pedido) references fs_pedido (id_pedido) on delete cascade on update cascade";
+
+$claves_foraneas6 = "ALTER TABLE fs_pedido_lista add FOREIGN KEY (
+					id_producto) references fs_productos (id_Producto) on delete cascade on update cascade";				
 
 if ($conexion->query($tabla_usuarios)) {
 	echo "Tabla usuarios creada con exito <br>";
@@ -113,6 +128,18 @@ if ($conexion->query($tabla_clientes)) {
 	echo "Tabla clientes NO creada :".$conexion->error.'Cod:'.$conexion->errno.'<br>';
 }
 
+if($conexion->query($tabla_pedido)){
+	echo "Tabla pedido creada con exito <br>";
+}else{
+	echo "Tabla pedido No creada: ".$conexion->error.' Cod: '.$conexion->errno.'<br>';
+}
+if($conexion->query($tabla_pedido_lista)){
+	echo "Tabla pedido/lista creada con exito <br>";
+}else{
+	echo "Tabla pedido/lista  No creada: ".$conexion->error.' Cod: '.$conexion->errno.'<br>';
+}
+
+
 if ($conexion->query($claves_foraneas)) {
 	echo "Claves foraneas creadas con exito <br>";
 }else{
@@ -135,11 +162,29 @@ if ($conexion->query($tabla_modelo)) {
 }else{
 	echo "Tabla modelo No creada Cod:".$conexion->errno.'<br>';
 }
-/*if ($conexion->query($claves_foraneas3)) {
+if ($conexion->query($claves_foraneas3)) {
 	echo "Claves foraneas 3 creadas con exito <br>";
 }else{
-	echo "Clave3 no creadaCod:".$conexion->errno.'//'.$conexion->error.'<br>';
-}*/
+	echo "Clave3 no creada Cod:".$conexion->errno.'//'.$conexion->error.'<br>';
+}
+
+if ($conexion->query($claves_foraneas4)) {
+	echo "Claves foraneas 4 creadas con exito <br>";
+}else{
+	echo "Clave 4 no creada Cod:".$conexion->errno.'//'.$conexion->error.'<br>';
+}
+
+if ($conexion->query($claves_foraneas5)) {
+	echo "Claves foraneas 5 creadas con exito <br>";
+}else{
+	echo "Clave5 no creadaCod:".$conexion->errno.'//'.$conexion->error.'<br>';
+}
+
+if ($conexion->query($claves_foraneas6)) {
+	echo "Claves foraneas 6 creadas con exito <br>";
+}else{
+	echo "Clave6 no creadaCod:".$conexion->errno.'//'.$conexion->error.'<br>';
+}
 
 if(mysqli_close($conexion)){
 	echo "Conexion Cerrada";
