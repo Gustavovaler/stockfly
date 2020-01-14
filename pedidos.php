@@ -46,12 +46,15 @@ include('navegador.php');
 
 			</div>
 			</div>
-		</div>
+		
 <!--		------------- DIV PEDIDO ----------------->	
     	<div id="pedido">
+    		<div id="cliente_seleccionado_nombre">
+    			
+    		</div>
 			
 		</div>
-
+	</div>
 	</div><!-----Fin Container ------>
 
 
@@ -77,6 +80,14 @@ include('navegador.php');
 
 		consultarDb('GET','scripts/consulta_articulo.php?cadena='+entrada_producto.value,div_respuesta_producto);
 	});
+
+	
+	var selectedCliente = function(cliente_id){
+		var cliente_nombre = document.getElementById('nombre_cliente');
+		var div_nombre_cliente = document.getElementById('cliente_seleccionado_nombre');
+		div_nombre_cliente.innerHTML = cliente_nombre.innerHTML;
+
+	}
 
 
 	</script>
