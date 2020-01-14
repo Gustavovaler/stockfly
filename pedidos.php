@@ -28,35 +28,31 @@ include('navegador.php');
 				<label for="">Seleccionar Productos</label>
 				<input type="text" id="entrada_producto">
 
-<table id="resultados">
-			<tr id="fila">
-				<td id="dato" width="5%">Art</td>
-				<td id="dato" width="20%">Modelo</td>
-				<td id="dato" width="10%">Color</td>
-				<td id="dato" width="15%">Estampa</td>
-				
-				<td id="dato" width="5%">Talle</td>
-				<td id="dato" width="5%">Cant</td>
-				<td id="dato" width="12%">Combinacion</td>
-				<td id="dato" width="12%">Obs</td>
-				<!--<td id="dato" width="16%">Accion</td>-->
-			</tr>
-	<table id="respuesta_producto"></table>
-</table>
+				<table id="resultados">
+					<tr id="fila">
+						<td id="dato" width="5%">Art</td>
+						<td id="dato" width="20%">Modelo</td>
+						<td id="dato" width="10%">Color</td>
+						<td id="dato" width="15%">Estampa</td>
+								
+						<td id="dato" width="5%">Talle</td>
+						<td id="dato" width="5%">Cant</td>
+						<td id="dato" width="12%">Combinacion</td>
+						<td id="dato" width="12%">Obs</td>
+						<!--<td id="dato" width="16%">Accion</td>-->
+					</tr>
+				<table id="respuesta_producto"></table>
+				</table>
 
-</div>
+			</div>
 			</div>
 		</div>
+<!--		------------- DIV PEDIDO ----------------->	
+    	<div id="pedido">
+			
+		</div>
 
-	</div>
-
-
-
-
-
-
-
-
+	</div><!-----Fin Container ------>
 
 
 

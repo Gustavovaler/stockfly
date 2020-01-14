@@ -25,7 +25,7 @@ include('header.php');
 			</div>
 		</div></a>
 
-		<a href=""><div class="menu2 menu">
+		<a href="pedidos.php"><div class="menu2 menu">
 			<div class="boton">
 				<p class="texto_boton">
 					Orden de pedido.
