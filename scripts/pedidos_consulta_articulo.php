@@ -26,7 +26,7 @@
 				<?php 
 					if ($con->affected_rows == 1) {
 						?>
-						<td class="datos" width="20%"><button>Seleccionar</button></td>
+						<td class="datos" width="20%"><button onclick="agregarAlPedido(<?php echo $key['descripcion'];?>)">Seleccionar</button></td>
 									
 								
 					<?php	

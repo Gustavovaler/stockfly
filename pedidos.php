@@ -52,6 +52,9 @@ include('navegador.php');
     		<div id="cliente_seleccionado_nombre">
     			
     		</div>
+    		<div id="articulos_seleccionados">
+    			
+    		</div>
 			
 		</div>
 	</div><!-----Fin Container ------>
@@ -87,6 +90,10 @@ include('navegador.php');
 		var div_nombre_cliente = document.getElementById('cliente_seleccionado_nombre');
 		div_nombre_cliente.innerHTML = cliente_nombre.innerHTML;
 
+	}
+
+	var agregarAlPedido = function(){
+		
 	}
 
 
