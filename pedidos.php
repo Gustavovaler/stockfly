@@ -37,9 +37,9 @@ include('navegador.php');
 								
 						<td id="dato" width="5%">Talle</td>
 						<td id="dato" width="5%">Cant</td>
-						<td id="dato" width="12%">Combinacion</td>
-						<td id="dato" width="12%">Obs</td>
-						<!--<td id="dato" width="16%">Accion</td>-->
+						<td id="dato" width="10%">Combinacion</td>
+						<td id="dato" width="10%">Obs</td>
+						<td id="dato" width="20%" >Accion</td>
 					</tr>
 				<table id="respuesta_producto"></table>
 				</table>
@@ -54,8 +54,8 @@ include('navegador.php');
     		</div>
 			
 		</div>
-	</div>
 	</div><!-----Fin Container ------>
+
 
 
 
@@ -78,7 +78,7 @@ include('navegador.php');
 	var entrada_producto = document.getElementById('entrada_producto');
 	entrada_producto.addEventListener("keyup",function(){
 
-		consultarDb('GET','scripts/consulta_articulo.php?cadena='+entrada_producto.value,div_respuesta_producto);
+		consultarDb('GET','scripts/pedidos_consulta_articulo.php?cadena='+entrada_producto.value,div_respuesta_producto);
 	});
 
 	
