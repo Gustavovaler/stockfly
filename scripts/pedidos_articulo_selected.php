@@ -13,17 +13,20 @@
 
 			foreach ($consulta as $key) {		
 			?>
+			<div class="item_pedido">
 			<tr>
-				<td class="id_producto" width="5%"><?php echo $key['id_producto'];?></td>
-				<td class="categoria" width="20%"><?php echo $key['descripcion'];?></td>
+				<td class="" width="4%"><?php echo $key['id_producto'];?></td>
+				<td class="" width="18%"><?php echo $key['descripcion'];?></td>				
+				<td class="" width="8%"><?php echo $key['color'];?></td>
+				<td class="" width="14%"><?php echo $key['estampa'];?></td>
+				<td class="" width="5%"><?php echo $key['talle'];?></td>
+				<td class="" width="12%"><?php echo $key['combinacion'];?></td>
+				<td class="" width="10%"><?php echo $key['obs'];?></td>
+				<td class="" width="6%"><?php echo $key['precio'];?></td>
+				<td class="" width="10%">subtotal</td>
+				<td class="" width="9%"><button class="bot_eliminar" onclick="removerProducto(this)">Del</button></td>
 				
-				<td class="color" width="10%"><?php echo $key['color'];?></td>
-				<td class="estampa" width="15%"><?php echo $key['estampa'];?></td>
-				<td class="talle" width="5%"><?php echo $key['talle'];?></td>
-				<td class="combinacion" width="12%"><?php echo $key['combinacion'];?></td>
-				<td class="obs" width="12%"><?php echo $key['obs'];?></td>
-				
-			</tr>
+			</tr></div>
 			<?php
 		
 			}

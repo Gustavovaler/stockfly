@@ -31,16 +31,17 @@ include('navegador.php');
 
 				<table id="resultados">
 					<tr id="fila">
-						<td id="dato" width="5%">Art</td>
+						<td id="dato" width="4%">Art</td>
 						<td id="dato" width="20%">Modelo</td>
 						<td id="dato" width="10%">Color</td>
-						<td id="dato" width="15%">Estampa</td>
+						<td id="dato" width="14%">Estampa</td>
 								
 						<td id="dato" width="5%">Talle</td>
 						<td id="dato" width="5%">Cant</td>
 						<td id="dato" width="10%">Combinacion</td>
-						<td id="dato" width="10%">Obs</td>
-						<td id="dato" width="20%" >Accion</td>
+						<td id="dato" width="9%">Obs</td>
+						<td id="dato" width="7%">Precio</td>
+						<td id="dato" width="15%" >Accion</td>
 					</tr>
 				<table id="respuesta_producto"></table>
 				</table>
@@ -106,9 +107,19 @@ include('navegador.php');
 			}
 		}
 		con_js.open('GET','scripts/pedidos_articulo_selected.php?producto='+id_producto,true);
-		con_js.send();	
-		
+		con_js.send();			
 	}
+	var removerProducto = function(bot){
+		console.log(bot);
+		let fila = document.getElementsByClassName('item_pedido');
+
+		for (let i = fila.length - 1; i >= 0; i--) {
+			fila[i].addEventListener("click",function(){
+				fila[i].innerHTML = '';
+		
+		});
+	}
+}
 
 
 	</script>
