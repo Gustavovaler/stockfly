@@ -21,8 +21,9 @@
 				<td class="datos estampa" width="15%"><?php echo $key['estampa'];?></td>
 				<td class="datos talle" width="5%"><?php echo $key['talle'];?></td>
 				<td class="datos cantidad" width="5%"><?php echo $key['cantidad'];?></td>
-				<td class="datos combinacion" width="12%"><?php echo $key['combinacion'];?></td>
-				<td class="datos obs" width="12%"><?php echo $key['obs'];?></td>
+				<td class="datos combinacion" width="10%"><?php echo $key['combinacion'];?></td>
+				<td class="datos obs" width="8%"><?php echo $key['obs'];?></td>
+				<td class="datos obs" width="6%"><?php echo $key['precio'];?></td>
 				
 			</tr>
 			<?php

@@ -15,10 +15,10 @@ $variante = $_GET['variante'];
 $cantidad = $_GET['cantidad'];
 $combinacion = $_GET['combinacion'];
 $estampa = $_GET['estampa'];
+$precio = $_GET['precio'];
 
-
-$sql_guardar_nuevo = "INSERT INTO fs_productos (descripcion,talle,color,cantidad,variante,combinacion,obs,estampa)VALUES(
-	'$descripcion','$talle','$color','$cantidad','$variante','$combinacion','$obs','$estampa')";
+$sql_guardar_nuevo = "INSERT INTO fs_productos (descripcion,talle,color,cantidad,variante,combinacion,obs,estampa,precio)VALUES(
+	'$descripcion','$talle','$color','$cantidad','$variante','$combinacion','$obs','$estampa','$precio')";
 	
 
 if($con->query($sql_guardar_nuevo)){

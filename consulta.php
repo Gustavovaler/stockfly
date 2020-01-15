@@ -18,8 +18,9 @@ include('navegador.php');
 				
 				<td id="dato" width="5%">Talle</td>
 				<td id="dato" width="5%">Cant</td>
-				<td id="dato" width="12%">Combinacion</td>
-				<td id="dato" width="12%">Obs</td>
+				<td id="dato" width="10%">Combinacion</td>
+				<td id="dato" width="8%">Obs</td>
+				<td id="dato" width="6%">Precio</td>
 				<!--<td id="dato" width="16%">Accion</td>-->
 			</tr>
 	<table id="respuesta"></table>

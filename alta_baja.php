@@ -33,8 +33,11 @@ include('navegador.php');
 			<input type="text" class="campos" name="variante" maxlength="50"><span class="pista">Hasta 50 caracteres.Opcional.</span><br>
 			<label for="">Combinacion</label>
 			<input type="text" class="campos" name="combinacion" maxlength="40"><span class="pista">Hasta 40 caracteres.Opcional.</span><br>
+
 			<label for="">Obs</label>
 			<input type="text" class="campos" name="obs" maxlength="50"><span class="pista">Hasta 50 caracteres.Opcional.</span><br>
+			<label for="">Precio</label>
+			<input type="number" class="campos" name="precio" maxlength="10"><span class="pista">Pesos SIN centavos.</span><br>
 			<br>
 			<button id="guardar_nuevo_modelo" type="submit" >Guardar Modelo Nuevo</button>
 			</form>
@@ -49,15 +52,16 @@ include('navegador.php');
 
 		<table id="resultados">
 			<tr id="fila">
-				<td id="dato" width="5%">Art</td>
-				<td id="dato" width="20%">Modelo</td>
-				<td id="dato" width="10%">Color</td>
+				<td id="dato" width="4%">Art</td>
+				<td id="dato" width="18%">Modelo</td>
+				<td id="dato" width="8%">Color</td>
 				<td id="dato" width="15%">Estampa</td>
 				
 				<td id="dato" width="5%">Talle</td>
 				<td id="dato" width="5%">Cant</td>
-				<td id="dato" width="12%">Combinacion</td>
-				<td id="dato" width="12%">Obs</td>
+				<td id="dato" width="10%">Combinacion</td>
+				<td id="dato" width="10%">Obs</td>
+				<td id="dato" width="8%">Precio</td>
 				<td id="dato" width="16%">Accion</td>
 			</tr>
 			<table id="respuesta"></table>

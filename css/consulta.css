@@ -50,10 +50,10 @@ table{
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
 .datos{
-	padding: 4px;
+	padding-left: 4px;
 	color: #131313;
 	border: 1px solid black;
-	font-size: 1.1em;
+	font-size: 1em;
 	background-color: #eeffff;
 }
 button{
