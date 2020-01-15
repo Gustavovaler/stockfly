@@ -99,7 +99,14 @@ include('navegador.php');
 
 	var agregarAlPedido = function(id_producto){
 		let articulos_seleccionados = document.getElementById('articulos_seleccionados');
-		articulos_seleccionados.insertAdjacentHTML('beforeend','<tr><td>'+id_producto+'</td></tr>');
+		let con_js=new XMLHttpRequest();
+		con_js.onreadystatechange = function(){
+			if (this.readyState == 4 && this.status == 200) {
+				articulos_seleccionados.insertAdjacentHTML('beforeend',this.responseText);
+			}
+		}
+		con_js.open('GET','scripts/pedidos_articulo_selected.php?producto='+id_producto,true);
+		con_js.send();	
 		
 	}
 
