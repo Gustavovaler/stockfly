@@ -110,16 +110,12 @@ include('navegador.php');
 		con_js.send();			
 	}
 	var removerProducto = function(bot){
-		console.log(bot);
-		let fila = document.getElementsByClassName('item_pedido');
-
-		for (let i = fila.length - 1; i >= 0; i--) {
-			fila[i].addEventListener("click",function(){
-				fila[i].innerHTML = '';
+		let td = bot.parentNode;
+		let tr = td.parentNode;
+		let tbody = tr.parentNode
 		
-		});
+		tbody.removeChild(tr);
 	}
-}
 
 
 	</script>

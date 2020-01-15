@@ -13,7 +13,7 @@
 
 			foreach ($consulta as $key) {		
 			?>
-			<div class="item_pedido">
+			
 			<tr>
 				<td class="" width="4%"><?php echo $key['id_producto'];?></td>
 				<td class="" width="18%"><?php echo $key['descripcion'];?></td>				
@@ -26,7 +26,7 @@
 				<td class="" width="10%">subtotal</td>
 				<td class="" width="9%"><button class="bot_eliminar" onclick="removerProducto(this)">Del</button></td>
 				
-			</tr></div>
+			</tr>
 			<?php
 		
 			}
