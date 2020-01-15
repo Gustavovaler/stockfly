@@ -10,8 +10,10 @@
 				$consulta = $con->query($sql);
 
 		if($consulta){	
+			$subtotal = 0;
 
-			foreach ($consulta as $key) {		
+			foreach ($consulta as $key) {
+			$subtotal+=$key['precio'];		
 			?>
 			
 			<tr>
@@ -22,8 +24,8 @@
 				<td class="" width="5%"><?php echo $key['talle'];?></td>
 				<td class="" width="12%"><?php echo $key['combinacion'];?></td>
 				<td class="" width="10%"><?php echo $key['obs'];?></td>
-				<td class="" width="6%"><?php echo $key['precio'];?></td>
-				<td class="" width="10%">subtotal</td>
+				<td class="precio" width="6%"><?php echo $key['precio'];?></td>
+				<td class="subtotal" width="10%"></td>
 				<td class="" width="9%"><button class="bot_eliminar" onclick="removerProducto(this)">Del</button></td>
 				
 			</tr>

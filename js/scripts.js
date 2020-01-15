@@ -1,4 +1,4 @@
-
+var subtotal = 0;
 
 
 function toggle(e,time = 0){
@@ -32,3 +32,5 @@ function toggle(e,time = 0){
 		conexion_ajax.open(peticion,url,true);
 		conexion_ajax.send();
 	}
+
+	

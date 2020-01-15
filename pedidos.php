@@ -7,7 +7,7 @@ include('navegador.php');
 <script src="js/scripts.js"></script>
 <body>
 	<div class="container">
-		<button>Nuevo Pedido</button>
+		<button onclick="toggle(nuevo_pedido)">Nuevo Pedido</button>
 		<div id="nuevo_pedido">
 			<div id="select_cliente">
 				<label for="">Seleccionar Cliente</label>
@@ -44,6 +44,7 @@ include('navegador.php');
 						<td id="dato" width="15%" >Accion</td>
 					</tr>
 				<table id="respuesta_producto"></table>
+
 				</table>
 
 			</div>
@@ -61,7 +62,7 @@ include('navegador.php');
     		<table id="articulos_seleccionados">
     			
     		</table>
-			
+			<table><tr><td>Subtotal</td><td id="subtotal"></script></td></tr></table>
 		</div>
 	</div><!-----Fin Container ------>
 
@@ -69,10 +70,13 @@ include('navegador.php');
 
 
 	<script>
-		let infoPagina = document.getElementById('infoPagina');
-	infoPagina.innerHTML = 'Pedidos';
+	let infoPagina = document.getElementById('infoPagina');
+		infoPagina.innerHTML = 'Pedidos';
 	let infoGeneral = document.getElementById('infoGeneralText');
 		infoGeneral.innerHTML = "Pagina de inicio. No hay mensajes";
+
+	var subtotal_td = document.getElementById('subtotal');
+	var nuevo_pedido = document.getElementById('nuevo_pedido');
 
 
 	var div_respuesta = document.getElementById('respuesta');
@@ -107,14 +111,24 @@ include('navegador.php');
 			}
 		}
 		con_js.open('GET','scripts/pedidos_articulo_selected.php?producto='+id_producto,true);
-		con_js.send();			
+		con_js.send();
+		calcularSubtotal();			
 	}
+
 	var removerProducto = function(bot){
 		let td = bot.parentNode;
 		let tr = td.parentNode;
 		let tbody = tr.parentNode
 		
 		tbody.removeChild(tr);
+	}
+
+	var calcularSubtotal = function(){
+		let precio_unit = document.getElementsByClassName('precio');
+		for (let i = precio_unit.length - 1; i >= 0; i--) {
+			subtotal_td.innerHTML = subtotal + precio_unit[i].innerHTML;
+		}
+		 
 	}
 
 

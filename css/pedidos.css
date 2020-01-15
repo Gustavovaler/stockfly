@@ -22,3 +22,7 @@
 #cliente_seleccionado_nombre{
 	font-size: 1.5em;
 }
+
+#nuevo_pedido{
+	/*display:none;*/
+}
