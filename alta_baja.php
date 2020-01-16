@@ -73,9 +73,9 @@ include('navegador.php');
 			<label for="">Editar Producto.</label>
 			
 		
-			<form id="edit_interface"  method="POST">
+			<div id="edit_interface" >
 				
-			</form>
+			</div>
 		</div>
 	</div>
 
@@ -120,35 +120,37 @@ include('navegador.php');
 	}
 	var guardarEdicion = function(id){
 
-		id_producto = document.getElementById('id_producto');
-		descripcion = document.getElementById('descripcion');
-		talle = document.getElementById('talle');
-		color = document.getElementById('color');
-		obs = document.getElementById('obs');
-		cantidad = document.getElementById('cantidad');
-		variante = document.getElementById('variante');
-		 precio = document.getElementById('precio');
-		estampa = document.getElementById('estampa');
-		 combinacion = document.getElementById('combinacion');
+		let e_id_producto = document.getElementById('id_producto');
+		let e_descripcion = document.getElementById('descripcion');
+		let e_talle = document.getElementById('talle');
+		let e_color = document.getElementById('color');
+		let e_obs = document.getElementById('obs');
+		let e_cantidad = document.getElementById('cantidad');
+		let e_variante = document.getElementById('variante');
+		let e_precio = document.getElementById('precio');
+		let e_estampa = document.getElementById('estampa');
+		let e_combinacion = document.getElementById('combinacion');
 
-		var valores = id_producto.value+descripcion.value;
-		console.log(valores);
+		
+	    actualizarProducto(e_id_producto.value,e_descripcion.value,e_talle.value,e_color.value,e_cantidad.value,e_obs.value,e_estampa.value,e_combinacion.value,e_precio.value);
 
+
+	
 	}
 
 
-
-	/*function consultarProducto(cadena){
+	 var  actualizarProducto = function(id,descripcion=null,talle=null,color=null,cantidad=null,obs=null,estampa=null,combinacion=null,precio=null,variante=null){
 		let conn = new XMLHttpRequest();
 		conn.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
-				div_respuesta.innerHTML = this.responseText;
+				entrada.innerHTML = this.responseText;
 			}
 		}
-		conn.open('GET','scripts/consulta_articulo_edit.php?cadena='+entrada.value,true);
+		conn.open('GET','scripts/update_producto.php?id_producto='+id+'&variante='+variante+'&color='+color+'&talle='+talle+'&precio='+precio+'&obs='+obs+'&descripcion='+descripcion+'&estampa='+estampa+'&combinacion='+combinacion+'&cantidad='+cantidad,true);
 		conn.send();
+	}
 
-	}*/
+	
 		
 
 
