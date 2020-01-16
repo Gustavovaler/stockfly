@@ -70,6 +70,9 @@ include('navegador.php');
 
 
 	<script>
+
+	var carrito = new Array();
+	var articulos_seleccionados = document.getElementById('articulos_seleccionados');
 	let infoPagina = document.getElementById('infoPagina');
 		infoPagina.innerHTML = 'Pedidos';
 	let infoGeneral = document.getElementById('infoGeneralText');
@@ -103,16 +106,19 @@ include('navegador.php');
 	}
 
 	var agregarAlPedido = function(id_producto){
-		let articulos_seleccionados = document.getElementById('articulos_seleccionados');
+		
 		let con_js=new XMLHttpRequest();
 		con_js.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
 				articulos_seleccionados.insertAdjacentHTML('beforeend',this.responseText);
+				guardarPedido(id_producto);
+
 			}
 		}
 		con_js.open('GET','scripts/pedidos_articulo_selected.php?producto='+id_producto,true);
 		con_js.send();
-		calcularSubtotal();			
+		calcularSubtotal();	
+		
 	}
 
 	var removerProducto = function(bot){
@@ -126,11 +132,17 @@ include('navegador.php');
 	var calcularSubtotal = function(){
 		let precio_unit = document.getElementsByClassName('precio');
 		for (let i = precio_unit.length - 1; i >= 0; i--) {
-			console.log(precio_unit[i]);
-		}
-		 
+			//console.log(precio_unit[i]);
+		}	
 	}
 
+	var guardarPedido = function(){
+		let tbody = articulos_seleccionados.firstChild.innerHTML = "caca";
+		let tr=tbody.firstChild;
+		console.log(tr);
+	};
+
+	
 
 	</script>
 </body>
