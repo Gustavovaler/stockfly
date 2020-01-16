@@ -70,9 +70,10 @@ include('navegador.php');
 			
 		</div>
 		<div id="edit_div">
+			<label for="">Editar Producto.</label>
 			
 		
-			<form id="edit_interface" action="" method="POST">
+			<form id="edit_interface"  method="POST">
 				
 			</form>
 		</div>
@@ -115,6 +116,23 @@ include('navegador.php');
 	var editarProducto = function(id_producto){
 		
 		consultarDb('GET', 'scripts/cargar_articulo_edit.php?id_producto='+id_producto,edit_prod);
+
+	}
+	var guardarEdicion = function(id){
+
+		id_producto = document.getElementById('id_producto');
+		descripcion = document.getElementById('descripcion');
+		talle = document.getElementById('talle');
+		color = document.getElementById('color');
+		obs = document.getElementById('obs');
+		cantidad = document.getElementById('cantidad');
+		variante = document.getElementById('variante');
+		 precio = document.getElementById('precio');
+		estampa = document.getElementById('estampa');
+		 combinacion = document.getElementById('combinacion');
+
+		var valores = id_producto.value+descripcion.value;
+		console.log(valores);
 
 	}
 

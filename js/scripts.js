@@ -22,7 +22,9 @@ function toggle(e,time = 0){
 			}	
 	}
 
-	var consultarDb = function (peticion, url,elemento){
+
+
+	var consultarDb = function (peticion, url,elemento = null){
 		var conexion_ajax = new XMLHttpRequest();
 		conexion_ajax.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
