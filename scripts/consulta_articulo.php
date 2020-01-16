@@ -3,7 +3,7 @@
 
 		$cadena = $_GET['cadena'];
 		
-		$sql = "SELECT * FROM fs_productos WHERE descripcion LIKE '%$cadena%'";
+		$sql = "SELECT * FROM fs_productos WHERE descripcion LIKE '%$cadena%' or estampa LIKE '%$cadena%'";
 		
 
 		if ($cadena != '') {

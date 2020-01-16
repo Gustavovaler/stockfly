@@ -69,7 +69,13 @@ include('navegador.php');
 			</div>
 			
 		</div>
-
+		<div id="edit_div">
+			
+		
+			<form id="edit_interface" action="" method="POST">
+				
+			</form>
+		</div>
 	</div>
 
 
@@ -83,6 +89,7 @@ include('navegador.php');
 		//---------------------------------------------------------
 
 		//------------- variables -----------
+		var edit_prod = document.getElementById('edit_interface');
 		var art_nuevo_div = document.getElementById('art_nuevo');
 		var boton_div_nuevo = document.getElementById('cargar_nuevo_div');
 		
@@ -103,6 +110,15 @@ include('navegador.php');
 		//consultarProducto(entrada.value);
 		consultarDb('GET','scripts/consulta_articulo_edit.php?cadena='+entrada.value,div_respuesta);
 	});
+
+
+	var editarProducto = function(id_producto){
+		
+		consultarDb('GET', 'scripts/cargar_articulo_edit.php?id_producto='+id_producto,edit_prod);
+
+	}
+
+
 
 	/*function consultarProducto(cadena){
 		let conn = new XMLHttpRequest();

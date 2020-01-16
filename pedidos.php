@@ -126,7 +126,7 @@ include('navegador.php');
 	var calcularSubtotal = function(){
 		let precio_unit = document.getElementsByClassName('precio');
 		for (let i = precio_unit.length - 1; i >= 0; i--) {
-			subtotal_td.innerHTML = subtotal + precio_unit[i].innerHTML;
+			console.log(precio_unit[i]);
 		}
 		 
 	}

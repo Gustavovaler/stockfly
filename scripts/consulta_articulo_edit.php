@@ -25,7 +25,7 @@
 				<td class="datos obs" width="10%"><?php echo $key['obs'];?></td>
 				<td class="datos obs" width="8%"><?php echo $key['precio'];?></td>
 				<td class="datos botones" width="16%">
-					<button>Edit</button><button>Borrar</button>
+					<button class="boton_edit_prod" onclick="editarProducto(<?php echo $key['id_producto'];?>)">Edit</button><button id="borrar">Borrar</button>
 				</td>
 			</tr>
 			<?php
