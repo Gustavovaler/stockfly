@@ -15,6 +15,8 @@ Cualquier consulta sobre este material escribime <strong>gustavodevaler@gmail.co
 
 # Installation
 
+Clone or download to your server www or public_html folder.
+
 ```
-php install 
+your-domain/global/build-model.php
 ```
