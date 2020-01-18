@@ -114,8 +114,11 @@ include('navegador.php');
 
 
 	var editarProducto = function(id_producto){
+
+
 		
 		consultarDb('GET', 'scripts/cargar_articulo_edit.php?id_producto='+id_producto,edit_prod);
+		toggle(edit_prod);
 
 	}
 	var guardarEdicion = function(id){
@@ -133,6 +136,8 @@ include('navegador.php');
 
 		
 	    actualizarProducto(e_id_producto.value,e_descripcion.value,e_talle.value,e_color.value,e_cantidad.value,e_obs.value,e_estampa.value,e_combinacion.value,e_precio.value);
+
+	    toggle(edit_prod);
 
 
 	
