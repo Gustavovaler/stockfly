@@ -13,8 +13,8 @@ como Express, Joomla, Laravel etc, pero se prescinde de ellos con fines didactic
 Cualquier consulta sobre este material escribime <strong>gustavodevaler@gmail.com</strong>
 
 
-#Installation
+# Installation
 
 ```
-´php install 
+php install 
 ```
