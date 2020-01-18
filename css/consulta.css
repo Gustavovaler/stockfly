@@ -44,9 +44,9 @@ table{
 .campos{
 	padding: 6px;
 	font-size: 1.2em;
-	font-weight: bold ;
+	
 	font-style: italic;
-	color: #cc6699;
+	color: #cc3333;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
 .datos{

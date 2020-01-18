@@ -41,7 +41,7 @@ include('global/conexion.php');
 			<?php
 			$buscar = '';
 			
-			$sql_consultar_cliente = "SELECT * FROM fs_clientes where nombre_completo like '%".$buscar."%'";
+			$sql_consultar_cliente = "SELECT * FROM fs_clientes where nombre_completo like '%".$buscar."%' ORDER BY nombre_completo";
 
 			if (!$consulta_cliente = $con->query($sql_consultar_cliente)) {
 				echo "error".$consulta_cliente->error;
