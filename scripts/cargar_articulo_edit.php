@@ -44,6 +44,7 @@ if ($consulta = $con->query($sql)) {
 	}
 	?>
 	<button id="guardar_edit" onclick="guardarEdicion(<?php echo $key['id_producto'];?>)">Guardar Cambios</button>
+	<button onclick="toggle(edit_prod)">Cancelar</button>
 	<?php
 }
 

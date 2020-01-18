@@ -70,11 +70,11 @@ include('navegador.php');
 			
 		</div>
 		<div id="edit_div">
-			<label for="">Editar Producto.</label>
+			
 			
 		
 			<div id="edit_interface" >
-				
+				<label for="">Editar Producto.</label>
 			</div>
 		</div>
 	</div>
@@ -136,7 +136,6 @@ include('navegador.php');
 
 		
 	    actualizarProducto(e_id_producto.value,e_descripcion.value,e_talle.value,e_color.value,e_cantidad.value,e_obs.value,e_estampa.value,e_combinacion.value,e_precio.value);
-
 	    toggle(edit_prod);
 
 
@@ -148,7 +147,7 @@ include('navegador.php');
 		let conn = new XMLHttpRequest();
 		conn.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
-				entrada.innerHTML = this.responseText;
+				alert('Guardado');
 			}
 		}
 		conn.open('GET','scripts/update_producto.php?id_producto='+id+'&variante='+variante+'&color='+color+'&talle='+talle+'&precio='+precio+'&obs='+obs+'&descripcion='+descripcion+'&estampa='+estampa+'&combinacion='+combinacion+'&cantidad='+cantidad,true);
