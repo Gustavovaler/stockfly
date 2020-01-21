@@ -4,6 +4,7 @@ include('navegador.php');
 ?>
 <link rel="stylesheet" href="css/consulta">
 <link rel="stylesheet" href="css/pedidos.css">
+
 <script src="js/scripts.js"></script>
 <body>
 	<div class="container">

@@ -4,12 +4,14 @@ include('navegador.php');
 ?>
 <link rel="stylesheet" href="css/ventas.css">
 <link rel="stylesheet" href="css/consulta.css">
+<link rel="stylesheet" href="css/ventas.css">
+
 <script src="js/scripts.js"></script>
 
 <body>
 	<div class="container">
 		<button onclick="toggle(nueva)" id="bot-nueva">Nueva venta</button>
-		<div id="nueva-venta">
+		<div id="nueva_venta">
 			<div id="select_cliente">
 				<label for="">Seleccionar Cliente</label>
 				<input type="text" id="entrada">
@@ -24,6 +26,9 @@ include('navegador.php');
 				<div id="respuesta">
 					
 				</div>
+
+			</div><!--select cliente-->
+
 			<div id="select_productos">
 				<label for="">Seleccionar Productos</label>
 				<input type="text" id="entrada_producto">
@@ -46,14 +51,25 @@ include('navegador.php');
 
 				</table>
 
-			</div><!--productos-->
+			
+			</div>
+			
+			<div class="info_general2">
+				
+			</div>
 
-
-
-
-		</div><!--cliente-->
-		</div><!--nueva venta-->
-		
+			<label for="">Cliente:</label>
+<!--		------------- DIV PEDIDO ----------------->	
+    		<div id="pedido">
+    		<div >
+    			<label for="" id="cliente_seleccionado_nombre"></label>
+    		</div>
+    		<table id="articulos_seleccionados">
+    			
+    		</table>
+			<table><tr><td>Subtotal</td><td id="subtotal"></script></td></tr></table>
+			</div>
+		</div>
     </div><!--container-->
 
 
