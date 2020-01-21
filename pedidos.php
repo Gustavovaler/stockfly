@@ -113,12 +113,12 @@ include('navegador.php');
 			if (this.readyState == 4 && this.status == 200) {
 				articulos_seleccionados.insertAdjacentHTML('beforeend',this.responseText);
 				guardarPedido(id_producto);
-
+				calcularSubtotal();
 			}
 		}
 		con_js.open('GET','scripts/pedidos_articulo_selected.php?producto='+id_producto,true);
 		con_js.send();
-		calcularSubtotal();	
+			
 		
 	}
 
@@ -128,12 +128,15 @@ include('navegador.php');
 		let tbody = tr.parentNode
 		
 		tbody.removeChild(tr);
+
 	}
 
 	var calcularSubtotal = function(){
+		carrito=0;
 		let precio_unit = document.getElementsByClassName('precio');
 		for (let i = precio_unit.length - 1; i >= 0; i--) {
-			//console.log(precio_unit[i]);
+			
+			subtotal_td.innerHTML=carrito += parseInt(precio_unit[i].innerHTML);
 		}	
 	}
 
