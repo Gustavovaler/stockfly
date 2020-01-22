@@ -29,6 +29,10 @@ echo '<br> sql : '.$sql_guardar_cliente.'<br>';
     if ($con->query($sql_guardar_cliente)) {
     	echo "<script> guardado();</script>";
     }else{
-    	echo "No Guardado : ".$con->error.' // Cod: '.$con->errno;
+        if ($con->errno == 1062) {
+            echo '<script> alert("No guardado !! ..Cliente ya existe");</script>';
+            echo "<script>window.location='../clientes.php';</script>";
+        }
+    	
     }
 ?>

@@ -152,6 +152,7 @@ include('navegador.php');
 	var pedido_list = [];
 
 	var guardarPedido = function(){
+		pedido_list = [];
 		
 		var id_prod_selected = document.getElementsByClassName('art-selected');
 
@@ -161,7 +162,12 @@ include('navegador.php');
 		}
 
 		console.log(pedido_list);
-		
+		//a tabla fs_pedido = 
+
+		// a tabla fs_pedido_lista:
+		//		id_pedido
+		//		id producto
+				
 	};
 
 	

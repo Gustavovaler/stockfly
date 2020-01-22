@@ -7,21 +7,21 @@
 }
 .boton{
 	width: 160px;
-	background-color: #005580;
+	background-color: #666666;
 	box-shadow: 8px 5px 8px rgba(0,0,0,0.40),inset 10px 5px 5px rgba(255,255,255,0.35);	
 	margin: auto;
 	min-height:150px;
 	border-radius: 15px;
 	margin-top: 1.5em;
 	color: #fff;
-	border: 1px solid teal;
+	border: 1px dotted #666666;
 	cursor: pointer;
 	text-align: center;
 	padding-left: 20px;
 	padding-right: 20px;
 }
 .menu :hover{
-	background-color: #009085;
+	background-color: #ee9ca7;
 }
 .texto_boton{
 	margin-top: 50px;

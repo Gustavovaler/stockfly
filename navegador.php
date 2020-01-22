@@ -9,6 +9,7 @@
 		<li class="link"><a href="ventas.php">Ventas</a></li>
 		<li class="link"><a href="clientes.php">Clientes</a></li>
 		<li class="link"><a href="administracion.php">Administracion</a></li>
+		<li class="link"><a href="administracion.php">Estadisticas</a></li>
 		<li class="link"><a href="">Ayuda</a></li>
 	</ul>
 </div><br>

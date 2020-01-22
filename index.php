@@ -48,10 +48,19 @@ include('header.php');
 				</p>
 			</div>
 		</div></a>
+
 		<a href=""><div class="menu4 menu">
 			<div class="boton">
 				<p class="texto_boton">
 					Panel de Administración.
+				</p>
+			</div>
+		</div></a>
+
+		<a href=""><div class="menu4 menu">
+			<div class="boton">
+				<p class="texto_boton">
+					Panel de estadisticas.
 				</p>
 			</div>
 		</div></a>

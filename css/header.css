@@ -7,7 +7,7 @@
 .main_bar{
 	width: 100%;
 	min-height: 55px;
-	background-color: #005580;
+	background-color: #c9c9c9;
 	padding: 10px;
 	box-shadow: inset 20px -5px 8px rgba(255,255,255,0.35);
 }
@@ -23,7 +23,7 @@
 	width: 80%;
 	margin: 10px auto;
 	font-size: 1em;
-	background-color: #00b0b0;
+	background-color: #6dd5fa;
 	padding: 10px;
 	border-radius: 8px;
 	box-shadow:  inset -10px -5px 5px rgba(255,255,255,0.50);
