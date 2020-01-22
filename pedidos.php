@@ -163,6 +163,7 @@ include('navegador.php');
 
 		let id_cliente = document.getElementById('cliente_id');
 
+
 		location = 'scripts/guardar_pedido.php?id_cliente='+id_cliente.innerHTML+'&id_usuario=1&senia=&pagado_total=l&fecha_entrega=&entregado=&importe_total='+carrito+'&saldo=';
 
 		console.log(pedido_list);
