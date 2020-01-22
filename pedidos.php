@@ -161,8 +161,24 @@ include('navegador.php');
 			pedido_list.push(id_prod_selected[i].innerHTML);
 		}
 
+		let id_cliente = document.getElementById('cliente_id');
+
+		location = 'scripts/guardar_pedido.php?id_cliente='+id_cliente.innerHTML+'&id_usuario=1&senia=&pagado_total=l&fecha_entrega=&entregado=&importe_total='+carrito+'&saldo=';
+
 		console.log(pedido_list);
+		console.log(cliente_seleccionado_nombre.innerHTML);
+		
+		console.log(id_cliente.innerHTML);
+		console.log('total'+carrito);
 		//a tabla fs_pedido = 
+		//		id_cliente  (id_cliente)
+		//      id_usuario == 1(por ahora)
+		//		senia == null
+		//      pagado_total == null
+		// 		fecha_entrega == null
+		//      entregado == null
+		//		importe_total (carrito)
+		//		saldo(null)
 
 		// a tabla fs_pedido_lista:
 		//		id_pedido

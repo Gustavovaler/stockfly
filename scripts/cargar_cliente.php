@@ -15,7 +15,7 @@
 			?>
 			<table>
 			<tr>
-				<td class="datos id_producto" width="10%"><?php echo $key['id_cliente'];?></td>
+				<td id="cliente_id" width="10%"><?php echo $key['id_cliente'];?></td>
 				<td class="datos categoria" id="nombre_cliente" width="50%"><?php echo $key['nombre_completo'];?></td>
 				
 				<td class="datos color" width="15%"><?php echo $key['descuento'];?></td>
