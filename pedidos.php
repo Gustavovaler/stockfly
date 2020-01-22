@@ -65,6 +65,11 @@ include('navegador.php');
     		</table>
 			<table><tr><td>Subtotal</td><td id="subtotal"></script></td></tr></table>
 		</div>
+		<div id="guardar_pe">
+			<button id="guardar_pedido">
+				Guardar pedido
+			</button>
+		</div>
 	</div><!-----Fin Container ------>
 
 
@@ -73,6 +78,10 @@ include('navegador.php');
 	<script>
 
 	var carrito = new Array();
+	var guardar_pedido =document.getElementById('guardar_pedido');
+		guardar_pedido.addEventListener("click", function(){
+			guardarPedido();
+		});
 	var articulos_seleccionados = document.getElementById('articulos_seleccionados');
 	let infoPagina = document.getElementById('infoPagina');
 		infoPagina.innerHTML = 'Pedidos';
@@ -112,8 +121,8 @@ include('navegador.php');
 		con_js.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
 				articulos_seleccionados.insertAdjacentHTML('beforeend',this.responseText);
-				guardarPedido(id_producto);
 				calcularSubtotal();
+				
 			}
 		}
 		con_js.open('GET','scripts/pedidos_articulo_selected.php?producto='+id_producto,true);
@@ -128,7 +137,7 @@ include('navegador.php');
 		let tbody = tr.parentNode
 		
 		tbody.removeChild(tr);
-
+		calcularSubtotal();
 	}
 
 	var calcularSubtotal = function(){
@@ -136,14 +145,23 @@ include('navegador.php');
 		let precio_unit = document.getElementsByClassName('precio');
 		for (let i = precio_unit.length - 1; i >= 0; i--) {
 			
-			subtotal_td.innerHTML=carrito += parseInt(precio_unit[i].innerHTML);
+			subtotal_td.innerHTML = '$ '+ (carrito += parseInt(precio_unit[i].innerHTML));
 		}	
 	}
 
+	var pedido_list = [];
+
 	var guardarPedido = function(){
-		let tbody = articulos_seleccionados.firstChild.innerHTML = "caca";
-		let tr=tbody.firstChild;
-		console.log(tr);
+		
+		var id_prod_selected = document.getElementsByClassName('art-selected');
+
+		for (let i = id_prod_selected.length - 1; i >= 0; i--) {
+
+			pedido_list.push(id_prod_selected[i].innerHTML);
+		}
+
+		console.log(pedido_list);
+		
 	};
 
 	

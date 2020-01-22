@@ -17,7 +17,7 @@
 			?>
 			
 			<tr>
-				<td class="" width="4%"><?php echo $key['id_producto'];?></td>
+				<td class="art-selected" width="4%"><?php echo $key['id_producto'];?></td>
 				<td class="" width="18%"><?php echo $key['descripcion'];?></td>				
 				<td class="" width="8%"><?php echo $key['color'];?></td>
 				<td class="" width="14%"><?php echo $key['estampa'];?></td>
