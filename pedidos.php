@@ -152,20 +152,21 @@ include('navegador.php');
 	var pedido_list = [];
 
 	var guardarPedido = function(){
+		//array para colectar los id de productos elegidos
 		pedido_list = [];
 		
 		var id_prod_selected = document.getElementsByClassName('art-selected');
 
+		//se agregan los productos al array pedido_list
 		for (let i = id_prod_selected.length - 1; i >= 0; i--) {
-
 			pedido_list.push(id_prod_selected[i].innerHTML);
 		}
 
 		let id_cliente = document.getElementById('cliente_id');
 
-
+		//guarda el pedido en la tabña fs_pedidos
 		consultarDb('GET','scripts/guardar_pedido.php?id_cliente='+id_cliente.innerHTML+'&id_usuario=1&senia=&pagado_total=l&fecha_entrega=&entregado=&importe_total='+carrito+'&saldo=',null);
-
+		//recorre el array de productos y guarda cada uno en la tabla fs_pedido_lista
 		for (var i = pedido_list.length - 1; i >= 0; i--) {
 		consultarDb('GET','scripts/guardar_art_pedido.php?id_producto='+pedido_list[i]+'&id_pedido=20',null);
 		}

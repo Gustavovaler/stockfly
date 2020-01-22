@@ -71,12 +71,12 @@ $tabla_pedido =    " CREATE TABLE IF NOT EXISTS fs_pedido(
 					id_cliente INT NOT NULL,
 					fecha timestamp DEFAULT current_timestamp(),
 					id_usuario int NOT NULL,
-					senia DECIMAL (10,2),
-					pagado_total INT DEFAULT NULL,
+					senia DECIMAL (10,2) default 0,
+					pagado_total INT DEFAULT 0,
 					fecha_entrega VARCHAR(15) DEFAULT NULL,
 					entregado VARCHAR (10) DEFAULT NULL,
 					importe_total decimal (10,2) NOT NULL,
-					saldo decimal (10,2) DEFAULT null)
+					saldo decimal (10,2) DEFAULT 0)
 					ENGINE = InnoDB DEFAULT CHARSET =utf8";
 
 $tabla_pedido_lista = "CREATE TABLE IF NOT EXISTS fs_pedido_lista(
