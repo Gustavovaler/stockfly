@@ -28,7 +28,9 @@ function toggle(e,time = 0){
 		var conexion_ajax = new XMLHttpRequest();
 		conexion_ajax.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
+				if (elemento != null) {
 				elemento.innerHTML = this.responseText;
+			}
 			}
 		}
 		conexion_ajax.open(peticion,url,true);

@@ -164,13 +164,17 @@ include('navegador.php');
 		let id_cliente = document.getElementById('cliente_id');
 
 
-		location = 'scripts/guardar_pedido.php?id_cliente='+id_cliente.innerHTML+'&id_usuario=1&senia=&pagado_total=l&fecha_entrega=&entregado=&importe_total='+carrito+'&saldo=';
+		consultarDb('GET','scripts/guardar_pedido.php?id_cliente='+id_cliente.innerHTML+'&id_usuario=1&senia=&pagado_total=l&fecha_entrega=&entregado=&importe_total='+carrito+'&saldo=',null);
 
-		console.log(pedido_list);
-		console.log(cliente_seleccionado_nombre.innerHTML);
+		for (var i = pedido_list.length - 1; i >= 0; i--) {
+		consultarDb('GET','scripts/guardar_art_pedido.php?id_producto='+pedido_list[i]+'&id_pedido=20',null);
+		}
+
+		//console.log(pedido_list);
+		//console.log(cliente_seleccionado_nombre.innerHTML);
 		
-		console.log(id_cliente.innerHTML);
-		console.log('total'+carrito);
+		//console.log(id_cliente.innerHTML);
+		//console.log('total'+carrito);
 		//a tabla fs_pedido = 
 		//		id_cliente  (id_cliente)
 		//      id_usuario == 1(por ahora)
