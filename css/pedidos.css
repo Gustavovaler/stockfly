@@ -18,12 +18,13 @@
 #pedido{
 	min-height: 400px;
 	background-color: rgba(255,255,255,.25);
+	
 }
 
 #cliente_seleccionado_nombre{
 	font-size: 1.5em;
 }
-
 #nuevo_pedido{
-	/*display:none;*/
+	display: none;
 }
+

@@ -25,7 +25,7 @@ include('navegador.php');
 					
 				</div>
 
-			</div>
+			
 			<div id="select_productos">
 				<label for="">Seleccionar Productos</label>
 				<input type="text" id="entrada_producto">
@@ -56,7 +56,7 @@ include('navegador.php');
 		</div>
 		<label for="">Cliente:</label>
 <!--		------------- DIV PEDIDO ----------------->	
-    	<div id="pedido">
+    	<div id="pedido" >
     		<div >
     			<label for="" id="cliente_seleccionado_nombre"></label>
     		</div>
@@ -70,13 +70,16 @@ include('navegador.php');
 				Guardar pedido
 			</button>
 		</div>
+		</div>
 	</div><!-----Fin Container ------>
-
-
-
+	<span id="ultimo_pedido" style="display: none;"></span>
 
 	<script>
 
+
+	
+	var gaurdar_pe = document.getElementById('guardar_pe');
+	var ultimo_pedido = document.getElementById('ultimo_pedido');
 	var carrito = new Array();
 	var guardar_pedido =document.getElementById('guardar_pedido');
 		guardar_pedido.addEventListener("click", function(){
@@ -146,7 +149,9 @@ include('navegador.php');
 		for (let i = precio_unit.length - 1; i >= 0; i--) {
 			
 			subtotal_td.innerHTML = '$ '+ (carrito += parseInt(precio_unit[i].innerHTML));
-		}	
+		}
+		consultarDb('GET','scripts/ultimo_pedido.php',ultimo_pedido);
+			
 	}
 
 	var pedido_list = [];
@@ -164,32 +169,21 @@ include('navegador.php');
 
 		let id_cliente = document.getElementById('cliente_id');
 
-		//guarda el pedido en la tabña fs_pedidos
+		consultarDb('GET','scripts/ultimo_pedido.php',ultimo_pedido);
+		console.log(ultimo_pedido.innerHTML);
+
+		//guarda el pedido en la tabla fs_pedidos
 		consultarDb('GET','scripts/guardar_pedido.php?id_cliente='+id_cliente.innerHTML+'&id_usuario=1&senia=&pagado_total=l&fecha_entrega=&entregado=&importe_total='+carrito+'&saldo=',null);
 		//recorre el array de productos y guarda cada uno en la tabla fs_pedido_lista
+
 		for (var i = pedido_list.length - 1; i >= 0; i--) {
-		consultarDb('GET','scripts/guardar_art_pedido.php?id_producto='+pedido_list[i]+'&id_pedido=20',null);
+			consultarDb('GET','scripts/guardar_art_pedido.php?id_producto='+pedido_list[i]+'&id_pedido='+(parseInt(ultimo_pedido.innerHTML)+1 ),null);
 		}
 
-		//console.log(pedido_list);
-		//console.log(cliente_seleccionado_nombre.innerHTML);
-		
-		//console.log(id_cliente.innerHTML);
-		//console.log('total'+carrito);
-		//a tabla fs_pedido = 
-		//		id_cliente  (id_cliente)
-		//      id_usuario == 1(por ahora)
-		//		senia == null
-		//      pagado_total == null
-		// 		fecha_entrega == null
-		//      entregado == null
-		//		importe_total (carrito)
-		//		saldo(null)
+		toggle(pedido);
+		toggle(guardar_pe);
+		alert('Pedido Guardado');
 
-		// a tabla fs_pedido_lista:
-		//		id_pedido
-		//		id producto
-				
 	};
 
 	
