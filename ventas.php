@@ -83,6 +83,50 @@ include('navegador.php');
 
 		var nueva = document.getElementById('nueva-venta');
 
+//----------------------------------------------------------	
+			var selectedCliente = function(cliente_id){
+		var cliente_nombre = document.getElementById('nombre_cliente');
+		var div_nombre_cliente = document.getElementById('cliente_seleccionado_nombre');
+		div_nombre_cliente.innerHTML = cliente_nombre.innerHTML;
+
+	}
+
+	var agregarAlPedido = function(id_producto){
+		
+		let con_js=new XMLHttpRequest();
+		con_js.onreadystatechange = function(){
+			if (this.readyState == 4 && this.status == 200) {
+				articulos_seleccionados.insertAdjacentHTML('beforeend',this.responseText);
+				calcularSubtotal();
+				
+			}
+		}
+		con_js.open('GET','scripts/pedidos_articulo_selected.php?producto='+id_producto,true);
+		con_js.send();
+			
+		
+	}
+
+	var removerProducto = function(bot){
+		let td = bot.parentNode;
+		let tr = td.parentNode;
+		let tbody = tr.parentNode
+		
+		tbody.removeChild(tr);
+		calcularSubtotal();
+	}
+
+	var calcularSubtotal = function(){
+		carrito=0;
+		let precio_unit = document.getElementsByClassName('precio');
+		for (let i = precio_unit.length - 1; i >= 0; i--) {
+			
+			subtotal_td.innerHTML = '$ '+ (carrito += parseInt(precio_unit[i].innerHTML));
+		}
+		consultarDb('GET','scripts/ultimo_pedido.php',ultimo_pedido);
+			
+	}
+
 		
 	</script>
 </body>
